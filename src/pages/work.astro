@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+
+const projects = [
+  {
+    title: 'Cinematic Scores',
+    year: '2024',
+    description: 'Original compositions for independent film. Orchestral textures layered with electronic elements, designed to serve the narrative without overpowering it.',
+    tags: ['film', 'orchestral', 'scoring'],
+  },
+  {
+    title: 'Electronic Productions',
+    year: '2024',
+    description: 'Beat-driven electronic music. Deep basslines, intricate percussion, and atmospheric pads. Released under the DoGBeaT moniker.',
+    tags: ['electronic', 'beats', 'production'],
+  },
+  {
+    title: 'Sound Design for Media',
+    year: '2023',
+    description: 'Custom sound effects and audio landscapes for video, gaming, and interactive installations. From subtle foley to massive cinematic impacts.',
+    tags: ['sfx', 'foley', 'media'],
+  },
+  {
+    title: 'Audio Processing Tools',
+    year: '2023',
+    description: 'Custom-built instruments and effects chains. Python and JavaScript-based utilities for audio manipulation, analysis, and creative processing.',
+    tags: ['tools', 'python', 'development'],
+  },
+  {
+    title: 'Mixing & Mastering',
+    year: 'Ongoing',
+    description: 'Professional mixing and mastering services. Analog-inspired processing with digital precision. Every mix is treated as a unique sonic puzzle.',
+    tags: ['mixing', 'mastering', 'studio'],
+  },
+];
+---
+
+<Base title="Work | Kesem Records">
+  <section class="work">
+    <h1>Work</h1>
+    <div class="divider"></div>
+
+    <ul class="project-list">
+      {projects.map((project) => (
+        <li class="project">
+          <div class="project-header">
+            <h2>{project.title}</h2>
+            <span class="year">{project.year}</span>
+          </div>
+          <p>{project.description}</p>
+          <div class="tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .work h1 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .project-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .project {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project:first-child {
+    padding-top: 0;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.8rem;
+  }
+
+  .project h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .year {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  .project p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    max-width: 520px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--accent);
+  }
+</style>

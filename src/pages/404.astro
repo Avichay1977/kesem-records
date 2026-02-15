@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Not Found | Kesem Records">
+  <section class="not-found">
+    <h1>404</h1>
+    <p>This frequency doesn't exist.</p>
+    <a href="/">back to start &rarr;</a>
+  </section>
+</Base>
+
+<style>
+  .not-found {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .not-found h1 {
+    font-size: 4rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+
+  .not-found p {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .not-found a {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+</style>

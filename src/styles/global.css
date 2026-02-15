@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --accent: #555;
+  --border: #ccc;
+  --max-width: 720px;
+  --font: 'Special Elite', 'Courier New', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --fg: #e8e8e8;
+    --accent: #aaa;
+    --border: #333;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--fg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}

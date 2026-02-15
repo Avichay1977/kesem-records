@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Contact | Kesem Records">
+  <section class="contact">
+    <h1>Contact</h1>
+    <div class="divider"></div>
+
+    <div class="content">
+      <p>
+        For inquiries about music production, sound design, licensing,
+        or collaboration &mdash; reach out directly.
+      </p>
+
+      <div class="contact-block">
+        <h2>Email</h2>
+        <a href="mailto:hello@kesemrecords.com">hello@kesemrecords.com</a>
+      </div>
+
+      <div class="contact-block">
+        <h2>Listen</h2>
+        <div class="links">
+          <a href="#">SoundCloud</a>
+          <a href="#">Bandcamp</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <h2>Connect</h2>
+        <div class="links">
+          <a href="#">Instagram</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing">
+      <p>Based in Israel. Working worldwide.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact h1 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .content {
+    max-width: 480px;
+  }
+
+  .content > p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-block {
+    margin-bottom: 2rem;
+  }
+
+  .contact-block h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-block a {
+    font-size: 0.95rem;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+  }
+
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .closing p {
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+  }
+</style>

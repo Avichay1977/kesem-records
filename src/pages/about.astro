@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About | Kesem Records">
+  <section class="about">
+    <h1>About</h1>
+    <div class="divider"></div>
+
+    <div class="content">
+      <p>
+        Kesem Records is a sound design and music production studio founded by
+        DoGBeaT. We specialize in crafting sonic experiences that bridge the gap
+        between technology and emotion.
+      </p>
+
+      <p>
+        Our work spans film scoring, electronic music production, sound design
+        for visual media, and the development of custom audio tools. Every
+        project begins with listening and ends with something worth hearing.
+      </p>
+
+      <h2>Approach</h2>
+      <p>
+        We believe in precision without sterility. Each sound is intentional,
+        each silence meaningful. Our process combines analog warmth with digital
+        precision, vintage character with modern clarity.
+      </p>
+
+      <h2>Tools & Technology</h2>
+      <p>
+        Beyond music production, we develop custom instruments, processing
+        chains, and audio utilities. Our tools are built by producers, for
+        producers &mdash; practical solutions born from real studio needs.
+      </p>
+
+      <h2>DoGBeaT</h2>
+      <p>
+        Producer, sound designer, and the creative force behind Kesem Records.
+        With years of experience across genres and media, DoGBeaT brings a
+        distinctive sonic signature to every project &mdash; raw, precise, and
+        unmistakably intentional.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about h1 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .content {
+    max-width: 560px;
+  }
+
+  .content p {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .content h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+</style>

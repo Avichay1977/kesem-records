@@ -1,0 +1,147 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Kesem Records">
+  <section class="hero">
+    <h1>Kesem Records</h1>
+    <p class="tagline">Sound design & music production studio</p>
+    <div class="divider"></div>
+    <p class="intro">
+      We craft sounds that move people. From cinematic scores to electronic
+      productions, every project is shaped with precision and intention.
+    </p>
+  </section>
+
+  <section class="featured">
+    <h2>Selected Work</h2>
+    <ul class="work-list">
+      <li>
+        <span class="work-title">Film Score Composition</span>
+        <span class="work-desc">Original scores for independent cinema</span>
+      </li>
+      <li>
+        <span class="work-title">Sound Design</span>
+        <span class="work-desc">Audio landscapes for visual media</span>
+      </li>
+      <li>
+        <span class="work-title">DoGBeaT Productions</span>
+        <span class="work-desc">Electronic music & beat engineering</span>
+      </li>
+      <li>
+        <span class="work-title">Audio Tools</span>
+        <span class="work-desc">Custom instruments & processing chains</span>
+      </li>
+    </ul>
+    <a href="/work" class="see-all">view all work &rarr;</a>
+  </section>
+
+  <section class="philosophy">
+    <blockquote>
+      "The ear is the gateway to the soul."
+    </blockquote>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 2rem 0 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .intro {
+    font-size: 1rem;
+    max-width: 520px;
+    line-height: 1.8;
+  }
+
+  .featured {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .featured h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+  }
+
+  .work-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .work-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .work-list li:last-child {
+    border-bottom: none;
+  }
+
+  .work-title {
+    font-size: 1.05rem;
+  }
+
+  .work-desc {
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+  }
+
+  .see-all {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+  }
+
+  .philosophy {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  blockquote {
+    font-size: 1.1rem;
+    font-style: normal;
+    color: var(--accent);
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.6rem;
+    }
+  }
+</style>
