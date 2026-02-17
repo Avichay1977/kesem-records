@@ -1,0 +1,673 @@
+---
+import Base from '../layouts/Base.astro';
+
+const featured = [
+  {
+    title: 'I Don\'t Want It - DoGBeaT Remix',
+    youtubeId: '8D5vmPjjY14',
+    category: 'remix',
+    stats: '81K views on YouTube / 40K+ streams on Spotify',
+    feat: 'feat. Jane & The Boy',
+  },
+  {
+    title: 'Crime Scene',
+    youtubeId: 'WWGpMjmSahc',
+    category: 'original',
+    stats: '14K views on YouTube / 6.6K streams on Spotify',
+  },
+  {
+    title: 'Bulldozer',
+    youtubeId: 'cNpgPLwSV10',
+    category: 'original',
+    stats: '8.1K views on YouTube / 5.8K streams on Spotify',
+  },
+];
+
+const remixes = [
+  {
+    title: 'Out of Body - DoGBeaT Remix',
+    youtubeId: '90jjAeq-E2c',
+    feat: 'feat. Yuval Maayan & Zach Sorgen',
+    genre: 'Hip Hop, Funk, Rock',
+    album: 'De l\'esprit',
+  },
+  {
+    title: 'Best of Luck - DoGBeaT Remix',
+    youtubeId: '0Dfc-AR5Hjk',
+    feat: 'feat. Katrina Stone',
+    genre: 'Rock, Pop, Funk, Indie',
+    album: 'De l\'esprit',
+  },
+  {
+    title: 'Entr\'acte: Act 4 (Carmen) - DoGBeaT Remix',
+    youtubeId: 'KI4_ovMCg7s',
+    feat: 'with Jerusalem Symphony Orchestra & Georges Bizet',
+    genre: 'Electronic',
+    album: 'Beat of Opera',
+  },
+  {
+    title: 'Cherubino\'s Aria: Voi che sapete - DoGBeaT Remix',
+    youtubeId: 'qrgrtQSAdwU',
+    feat: 'with Jerusalem Symphony Orchestra & W.A. Mozart',
+    genre: 'Lounge, Soul & RnB',
+    album: 'Beat of Opera',
+  },
+  {
+    title: 'Gnossienne no. 1 - DoGBeaT Remix',
+    youtubeId: '_WjSxtbldow',
+    feat: 'with Erik Satie (Arr. for Cello)',
+    genre: 'Reggae, Electronic',
+    album: 'Satie',
+  },
+];
+
+const albums = [
+  { title: 'Beat of Opera', style: 'Uplifting Dramatic Electronic', year: '2024', youtubeList: 'OLAK5uy_kSoUHYwYWN1YT3knefjDKBGzfkM5Qt-Hw' },
+  { title: 'Satie (Arr. for Cello) - DoGBeaT Remix', style: 'Electronic Reggae', year: '2024', youtubeList: 'OLAK5uy_mHioK6xtzf7VV3a_2VjCLB78n8I5rEKy8' },
+  { title: 'Rash', style: 'Funky Rock', year: '2023' },
+  { title: 'Swamp It Up', style: 'Thrilling Punk Rock', year: '2023' },
+  { title: 'De l\'esprit - DoGBeaT Remix', style: 'Sparkly Disco Pop', year: '2023', youtubeList: 'OLAK5uy_mEZx5SuE0vKW723PG5Q7xdvEDTbJMs9KQ' },
+  { title: 'Royal', style: 'Carefree Corporate Vibes', year: '2023' },
+  { title: 'Clone - DoGBeaT Remixes', style: 'Carefree Electronic Pop', year: '2022', youtubeList: 'OLAK5uy_m3yJm1vuHXIK7w5cN1d-e96rt4wl3op9s' },
+  { title: 'All Night', style: 'Retro Electronic Pop', year: '2022' },
+  { title: 'Crop', style: 'Smooth Melodic House', year: '' },
+  { title: 'Journal', style: 'Smooth Retro Funk', year: '' },
+  { title: 'Broken Things', style: 'Dark Playful Funk', year: '' },
+  { title: 'Deep Connection', style: 'Spacey Electronic Hip Hop', year: '' },
+  { title: 'Night Crawlers', style: 'Dark \'80s Pop', year: '' },
+];
+
+const collaborations = [
+  {
+    artist: 'Shlomi Shaban (שלומי שבן)',
+    works: 'Nuri (נורי)',
+    role: 'Arrangement & Performance',
+    youtubeId: '6G7rzlSWPQ4',
+  },
+  {
+    artist: 'Shuli Rand (שולי רנד)',
+    works: 'Mishenitnah HaReshut (משניתנה הרשות)',
+    role: 'Arrangement & Production',
+    youtubeId: 'XVO2ubqcDVU',
+  },
+  {
+    artist: 'Sofi Tsedaka (סופי צדקה)',
+    works: 'Or Shel Kochavim (אור של כוכבים)',
+    role: 'Arrangement & Production',
+    youtubeId: 'dBdmci7WtUw',
+  },
+  {
+    artist: 'Shai Lahav (שי להב)',
+    works: 'Tamid HaKochavim (תמיד הכוכבים)',
+    role: 'Arrangement, Performance & Production',
+    youtubeId: 'TZQksnr9ofs',
+  },
+  {
+    artist: 'Noa Faran & DoGBeaT (נועה פארן ואביחי טוכמן)',
+    role: 'Composition, Arrangement, Production & Mix',
+    label: 'Universal Music Group',
+    tracks: [
+      { name: 'Mikre Avud (מקרה אבוד)', youtubeId: 'rqFYO72tGAM' },
+      { name: 'Esh Kara (אש קרה)', youtubeId: 'mee8Wbkkz0g' },
+      { name: 'Relocation (רילוקיישן)', youtubeId: 'x2Hnau8S8_M' },
+    ],
+  },
+  {
+    artist: 'Jerusalem Symphony Orchestra',
+    works: 'Beat of Opera (Carmen, Cherubino\'s Aria)',
+    role: 'Remix, Arrangement & Production',
+    conductor: 'Yishai Steckler',
+  },
+  {
+    artist: 'Assaf Talmudi & DoGBeaT',
+    works: 'Matir Agunot (מתיר עגונות), Ehad al Ehad (אחד על אחד)',
+    role: 'Co-composer, Arrangement, Performance & Mix',
+    link: 'https://www.assaftalmudi.co.il/',
+  },
+];
+
+const theater = [
+  {
+    title: 'SILENCE Triptychon',
+    venue: 'Film',
+    role: 'Composition & Sound Design',
+    collaborator: 'Guy Goldstein',
+    year: '',
+    type: 'Film',
+    link: 'https://www.youtube.com/watch?v=S59oswY3kQs',
+  },
+  {
+    title: 'Matir Agunot (מתיר עגונות)',
+    venue: 'Kan 11',
+    role: 'Composition, Performance & Mix',
+    collaborator: 'Assaf Talmudi',
+    year: '2019',
+    type: 'TV Series',
+    link: 'https://www.youtube.com/playlist?list=PLt40gjLOZkQ7V6msfroZyzXo1CdHA4AmC',
+  },
+  {
+    title: 'Ehad al Ehad (אחד על אחד)',
+    venue: 'Kan 11',
+    role: 'Composition, Performance & Mix',
+    collaborator: 'Assaf Talmudi',
+    year: '',
+    type: 'TV Series',
+    link: 'https://www.youtube.com/playlist?list=PLLttfoK87AdVg-SfJGctxipYGZEBarDOL',
+  },
+  {
+    title: 'Doharim',
+    venue: 'Tmuna Theater, Tel Aviv',
+    role: 'Original Music & Composition',
+    director: 'Ilan Torn & Hagi Linik',
+    writer: 'Hagi Linik',
+    actor: 'Shmuel Wolf',
+    year: '2012 - 2013',
+    performances: '23 performances',
+    link: 'https://www.tmu-na.org.il/?CategoryID=166&ArticleID=2441',
+    type: 'Theater',
+  },
+];
+---
+
+<Base title="Music | Kesem Records">
+  <section class="music">
+    <h1>Music</h1>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h2>Featured Tracks</h2>
+      <div class="tracks">
+        {featured.map((track) => (
+          <div class="track">
+            <div class="track-header">
+              <a href={`https://www.youtube.com/watch?v=${track.youtubeId}`} target="_blank" rel="noopener noreferrer" class="track-title">{track.title}</a>
+              {track.feat && <span class="track-feat">{track.feat}</span>}
+            </div>
+            <span class="track-stats">{track.stats}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Discography</h2>
+      <p class="section-note">
+        13 albums released on
+        <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer">Artlist</a>
+        &mdash; available for licensing worldwide.
+      </p>
+      <div class="albums-grid">
+        {albums.map((album) => (
+          <div class="album">
+            {album.youtubeList ? (
+              <a href={`https://www.youtube.com/playlist?list=${album.youtubeList}`} target="_blank" rel="noopener noreferrer" class="album-title">{album.title}</a>
+            ) : (
+              <span class="album-title">{album.title}</span>
+            )}
+            <span class="album-style">{album.style}</span>
+            {album.year && <span class="album-year">{album.year}</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Remixes</h2>
+      <p class="section-note">
+        Classical compositions reimagined through electronic production.
+      </p>
+      <div class="remix-list">
+        {remixes.map((remix) => (
+          <div class="remix">
+            <a href={`https://www.youtube.com/watch?v=${remix.youtubeId}`} target="_blank" rel="noopener noreferrer" class="remix-title">{remix.title}</a>
+            <span class="remix-feat">{remix.feat}</span>
+            <span class="remix-genre">{remix.genre}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Collaborations</h2>
+      <div class="credits-list">
+        {collaborations.map((collab) => (
+          <div class="credit">
+            <h3>
+              {collab.link ? (
+                <a href={collab.link} target="_blank" rel="noopener noreferrer">{collab.artist}</a>
+              ) : (
+                collab.artist
+              )}
+              {collab.youtubeId && (
+                <a href={`https://www.youtube.com/watch?v=${collab.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt-badge" title="Watch on YouTube">▶</a>
+              )}
+            </h3>
+            <div class="credit-details">
+              <div class="detail">
+                <span class="label">Role</span>
+                <span class="value">{collab.role}</span>
+              </div>
+              {collab.works && (
+                <div class="detail">
+                  <span class="label">Works</span>
+                  <span class="value">
+                    {collab.youtubeId ? (
+                      <a href={`https://www.youtube.com/watch?v=${collab.youtubeId}`} target="_blank" rel="noopener noreferrer">{collab.works}</a>
+                    ) : (
+                      collab.works
+                    )}
+                  </span>
+                </div>
+              )}
+              {collab.tracks && (
+                <div class="detail detail-full">
+                  <span class="label">Tracks</span>
+                  <span class="value tracks-list">
+                    {collab.tracks.map((track, i) => (
+                      <>
+                        <a href={`https://www.youtube.com/watch?v=${track.youtubeId}`} target="_blank" rel="noopener noreferrer">{track.name}</a>
+                        {i < collab.tracks.length - 1 && <span class="track-sep">&nbsp;&middot;&nbsp;</span>}
+                      </>
+                    ))}
+                  </span>
+                </div>
+              )}
+              {collab.label && (
+                <div class="detail">
+                  <span class="label">Label</span>
+                  <span class="value">{collab.label}</span>
+                </div>
+              )}
+              {collab.conductor && (
+                <div class="detail">
+                  <span class="label">Conductor</span>
+                  <span class="value">{collab.conductor}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Theater & Television</h2>
+      <div class="credits-list">
+        {theater.map((item) => (
+          <div class="credit">
+            <div class="credit-header">
+              <h3>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a>
+                ) : (
+                  item.title
+                )}
+              </h3>
+              {item.year && <span class="year">{item.year}</span>}
+            </div>
+            <div class="credit-details">
+              <div class="detail">
+                <span class="label">Role</span>
+                <span class="value">{item.role}</span>
+              </div>
+              <div class="detail">
+                <span class="label">{item.type === 'TV Series' ? 'Network' : item.type === 'Film' ? 'Format' : 'Venue'}</span>
+                <span class="value">{item.venue}</span>
+              </div>
+              {item.collaborator && (
+                <div class="detail">
+                  <span class="label">With</span>
+                  <span class="value">{item.collaborator}</span>
+                </div>
+              )}
+              {item.director && (
+                <div class="detail">
+                  <span class="label">Director</span>
+                  <span class="value">{item.director}</span>
+                </div>
+              )}
+              {item.writer && (
+                <div class="detail">
+                  <span class="label">Writer</span>
+                  <span class="value">{item.writer}</span>
+                </div>
+              )}
+              {item.actor && (
+                <div class="detail">
+                  <span class="label">Performer</span>
+                  <span class="value">{item.actor}</span>
+                </div>
+              )}
+              {item.performances && (
+                <div class="detail">
+                  <span class="label">Run</span>
+                  <span class="value">{item.performances}</span>
+                </div>
+              )}
+            </div>
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" class="credit-link">
+                view production &rarr;
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="section listen-cta">
+      <h2>Listen</h2>
+      <div class="listen-links">
+        <a href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener noreferrer">Spotify</a>
+        <a href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://soundcloud.com/avi-tuchman" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+        <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer">Artlist</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .music h1 {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-note {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    max-width: 520px;
+  }
+
+  .section-note a {
+    color: var(--fg);
+  }
+
+  .tracks {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .track {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .track:first-child {
+    padding-top: 0;
+  }
+
+  .track-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .track-title {
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    color: var(--fg);
+    display: inline;
+  }
+
+  .track-feat {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .track-stats {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .albums-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .album {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .album:nth-child(odd) {
+    padding-right: 1.5rem;
+  }
+
+  .album:nth-child(even) {
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border);
+  }
+
+  a.album-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    color: var(--fg);
+  }
+
+  span.album-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+
+  .album-style {
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .album-year {
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  .remix-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .remix {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .remix:first-child {
+    padding-top: 0;
+  }
+
+  .remix-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    color: var(--fg);
+  }
+
+  .remix-feat {
+    font-size: 0.75rem;
+    color: var(--accent);
+  }
+
+  .remix-genre {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .credits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .credit {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .credit:first-child {
+    padding-top: 0;
+  }
+
+  .credit h3 {
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.2rem;
+  }
+
+  .credit h3 a {
+    color: var(--fg);
+  }
+
+  .yt-badge {
+    font-size: 0.55rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .yt-badge:hover {
+    opacity: 1;
+  }
+
+  .credit-details .value a {
+    color: var(--fg);
+  }
+
+  .detail-full {
+    grid-column: 1 / -1;
+  }
+
+  .tracks-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .track-sep {
+    color: var(--accent);
+  }
+
+  .credit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.2rem;
+  }
+
+  .credit-header h3 {
+    margin-bottom: 0;
+  }
+
+  .year {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  .credit-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .value {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .credit-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .listen-cta {
+    padding-top: 1rem;
+  }
+
+  .listen-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .listen-links a {
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 480px) {
+    .albums-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .album:nth-child(even) {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .album:nth-child(odd) {
+      padding-right: 0;
+    }
+
+    .credit-details {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

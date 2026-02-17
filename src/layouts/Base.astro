@@ -21,6 +21,7 @@ const { title = 'Kesem Records', description = 'Sound design, music production &
       <nav>
         <a href="/" class="logo">Kesem Records</a>
         <div class="nav-links">
+          <a href="/music">Music</a>
           <a href="/about">About</a>
           <a href="/work">Work</a>
           <a href="/contact">Contact</a>
@@ -35,6 +36,40 @@ const { title = 'Kesem Records', description = 'Sound design, music production &
     <footer class="footer">
       <p>&copy; {new Date().getFullYear()} Kesem Records. All rights reserved.</p>
     </footer>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+      C64
+    </button>
+
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'commodore') {
+          document.documentElement.setAttribute('data-theme', 'commodore');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const btn = document.getElementById('themeToggle');
+          function updateLabel() {
+            const current = document.documentElement.getAttribute('data-theme');
+            btn.textContent = current === 'commodore' ? 'B&W' : 'C64';
+          }
+          updateLabel();
+
+          btn.addEventListener('click', function() {
+            const current = document.documentElement.getAttribute('data-theme');
+            if (current === 'commodore') {
+              document.documentElement.removeAttribute('data-theme');
+              localStorage.setItem('theme', 'typewriter');
+            } else {
+              document.documentElement.setAttribute('data-theme', 'commodore');
+              localStorage.setItem('theme', 'commodore');
+            }
+            updateLabel();
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
 

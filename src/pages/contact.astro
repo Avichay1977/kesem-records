@@ -4,40 +4,67 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Contact | Kesem Records">
   <section class="contact">
-    <h1>Contact</h1>
+    <h1>Let's Connect.</h1>
     <div class="divider"></div>
 
     <div class="content">
-      <p>
+      <p class="lead">
         For inquiries about music production, sound design, licensing,
-        or collaboration &mdash; reach out directly.
+        or collaboration &mdash; I'd love to hear from you.
       </p>
 
-      <div class="contact-block">
-        <h2>Email</h2>
-        <a href="mailto:hello@kesemrecords.com">hello@kesemrecords.com</a>
+      <div class="cta-block">
+        <h2>Get in Touch</h2>
+        <a href="mailto:tuchmanavi@gmail.com" class="email-cta">tuchmanavi@gmail.com</a>
       </div>
 
-      <div class="contact-block">
-        <h2>Listen</h2>
-        <div class="links">
-          <a href="#">SoundCloud</a>
-          <a href="#">Bandcamp</a>
-          <a href="#">YouTube</a>
+      <div class="guide-block">
+        <h2>What to Include</h2>
+        <ul class="guide-list">
+          <li>
+            <span class="guide-label">Project</span>
+            <span class="guide-desc">Brief description of your vision and goals</span>
+          </li>
+          <li>
+            <span class="guide-label">Timeline</span>
+            <span class="guide-desc">Ideal timeline and any references or examples</span>
+          </li>
+          <li>
+            <span class="guide-label">Location</span>
+            <span class="guide-desc">Where you're based &mdash; remote collaboration welcome</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="links-section">
+        <div class="contact-block">
+          <h2>Listen</h2>
+          <div class="links">
+            <a href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://soundcloud.com/avi-tuchman" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+          </div>
         </div>
-      </div>
 
-      <div class="contact-block">
-        <h2>Connect</h2>
-        <div class="links">
-          <a href="#">Instagram</a>
-          <a href="#">GitHub</a>
+        <div class="contact-block">
+          <h2>License</h2>
+          <div class="links">
+            <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer">Artlist</a>
+          </div>
+        </div>
+
+        <div class="contact-block">
+          <h2>Connect</h2>
+          <div class="links">
+            <a href="https://instagram.com/dogbeat77" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://github.com/Avichay1977" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="closing">
-      <p>Based in Israel. Working worldwide.</p>
+      <p>Based in Israel &ensp;|&ensp; Collaborating Globally &ensp;|&ensp; Remote Ready.</p>
     </div>
   </section>
 </Base>
@@ -45,8 +72,7 @@ import Base from '../layouts/Base.astro';
 <style>
   .contact h1 {
     font-size: 2rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   .divider {
@@ -60,10 +86,72 @@ import Base from '../layouts/Base.astro';
     max-width: 480px;
   }
 
-  .content > p {
+  .lead {
     font-size: 0.95rem;
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  /* ── Email CTA ── */
+  .cta-block {
+    margin-bottom: 3rem;
+  }
+
+  .cta-block h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .email-cta {
+    font-size: 1.25rem;
+    letter-spacing: 0.03em;
+    border-bottom-width: 2px;
+    padding-bottom: 2px;
+  }
+
+  /* ── Brief Guide ── */
+  .guide-block {
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .guide-block h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .guide-label {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.15rem;
+  }
+
+  .guide-desc {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--accent);
+    line-height: 1.6;
+  }
+
+  /* ── Links Section ── */
+  .links-section {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
   }
 
   .contact-block {
@@ -78,10 +166,6 @@ import Base from '../layouts/Base.astro';
     margin-bottom: 0.5rem;
   }
 
-  .contact-block a {
-    font-size: 0.95rem;
-  }
-
   .links {
     display: flex;
     gap: 1.5rem;
@@ -91,6 +175,7 @@ import Base from '../layouts/Base.astro';
     font-size: 0.9rem;
   }
 
+  /* ── Closing ── */
   .closing {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -101,5 +186,21 @@ import Base from '../layouts/Base.astro';
     font-size: 0.8rem;
     color: var(--accent);
     letter-spacing: 0.06em;
+  }
+
+  /* ── C64 email override ── */
+  :global([data-theme="commodore"]) .email-cta {
+    font-size: 0.8rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .email-cta {
+      font-size: 1.05rem;
+    }
+
+    .guide-list {
+      gap: 1.25rem;
+    }
   }
 </style>

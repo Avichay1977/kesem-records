@@ -9,38 +9,71 @@ import Base from '../layouts/Base.astro';
 
     <div class="content">
       <p>
-        Kesem Records is a sound design and music production studio founded by
-        DoGBeaT. We specialize in crafting sonic experiences that bridge the gap
-        between technology and emotion.
-      </p>
-
-      <p>
-        Our work spans film scoring, electronic music production, sound design
-        for visual media, and the development of custom audio tools. Every
-        project begins with listening and ends with something worth hearing.
-      </p>
-
-      <h2>Approach</h2>
-      <p>
-        We believe in precision without sterility. Each sound is intentional,
-        each silence meaningful. Our process combines analog warmth with digital
-        precision, vintage character with modern clarity.
-      </p>
-
-      <h2>Tools & Technology</h2>
-      <p>
-        Beyond music production, we develop custom instruments, processing
-        chains, and audio utilities. Our tools are built by producers, for
-        producers &mdash; practical solutions born from real studio needs.
+        Kesem Records is a sound design and music production studio
+        founded by Avichai Tuchman (DoGBeaT). We specialize in crafting
+        sonic experiences that bridge the gap between technology and
+        emotion &mdash; from retro funk to classical remixes, from
+        electronic beats to cinematic scores.
       </p>
 
       <h2>DoGBeaT</h2>
       <p>
-        Producer, sound designer, and the creative force behind Kesem Records.
-        With years of experience across genres and media, DoGBeaT brings a
-        distinctive sonic signature to every project &mdash; raw, precise, and
-        unmistakably intentional.
+        Avichay Tuchman, AKA DoGBeaT, is a musician who embodies the
+        energy of '80s French disco with the raw power of rock 'n' roll.
+        When he's not rocking out with the folk-punk band
+        <a href="https://www.youtube.com/@OyDivision" target="_blank" rel="noopener noreferrer">Oy Division</a>,
+        you'll find him in the studio, crafting infectious melodies for
+        TV series, theater productions, and his own solo projects.
       </p>
+      <p>
+        A master of multiple instruments and a skilled mix technician,
+        Avichay has spent the last decade producing and playing for a
+        diverse range of artists, many of whom have become radio regulars.
+        His passion for music transcends genre, drawing inspiration from
+        everything that grooves and moves the soul.
+      </p>
+      <p>
+        But that's not all. Avichay is also a sought-after indie pop
+        producer with a Midas touch. He's helped shape the sound of
+        numerous Israeli artists, with many of his productions landing
+        coveted spots on the nation's most influential playlists.
+      </p>
+      <p>
+        With a knack for blending catchy hooks with unexpected twists,
+        DoGBeaT's music is sure to get you moving and leave you wanting more.
+      </p>
+
+      <h2>What We Do</h2>
+      <p>
+        Music production, composition, arrangement, sound design, mixing
+        and mastering. All tracks composed, performed, and mixed in-house.
+        Our music is available for licensing through Artlist for creators
+        worldwide.
+      </p>
+
+      <h2>Approach</h2>
+      <p>
+        We believe in precision without sterility. Each sound is
+        intentional, each silence meaningful. Our process combines analog
+        warmth with digital precision, vintage character with modern
+        clarity.
+      </p>
+
+      <h2>Genres</h2>
+      <div class="genres">
+        <span class="genre">Retro</span>
+        <span class="genre">Electronic</span>
+        <span class="genre">Funk</span>
+        <span class="genre">Rock</span>
+        <span class="genre">Hip Hop</span>
+        <span class="genre">Pop</span>
+        <span class="genre">Reggae</span>
+        <span class="genre">Lounge</span>
+        <span class="genre">Soul & RnB</span>
+        <span class="genre">Indie</span>
+        <span class="genre">Corporate</span>
+        <span class="genre">Classical Remix</span>
+      </div>
     </div>
   </section>
 </Base>
@@ -76,5 +109,20 @@ import Base from '../layouts/Base.astro';
     color: var(--accent);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+  }
+
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .genre {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--accent);
   }
 </style>
