@@ -1,60 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import collaborationsData from '../data/collaborations.json';
+import duo from '../data/duo.json';
+import featuredData from '../data/featured.json';
+import albumsData from '../data/albums.json';
+import remixesData from '../data/remixes.json';
+import scoringData from '../data/scoring.json';
 
-const collaborations = [
-  { artist: 'Shlomi Shaban', artistHe: 'שלומי שבן', work: 'Nuri (נורי)', role: 'Arrangement & Performance', youtubeId: '6G7rzlSWPQ4' },
-  { artist: 'Shuli Rand', artistHe: 'שולי רנד', work: 'Mishenitnah HaReshut (משניתנה הרשות)', role: 'Arrangement & Production', youtubeId: 'XVO2ubqcDVU' },
-  { artist: 'Sofi Tsedaka', artistHe: 'סופי צדקה', work: 'Or Shel Kochavim (אור של כוכבים)', role: 'Arrangement & Production', youtubeId: 'dBdmci7WtUw' },
-  { artist: 'Shai Lahav', artistHe: 'שי להב', work: 'Tamid HaKochavim (תמיד הכוכבים)', role: 'Arrangement, Performance & Production', youtubeId: 'TZQksnr9ofs' },
-];
-
-const duo = {
-  artist: 'Noa Faran & DoGBeaT',
-  artistHe: 'נועה פארן ואביחי טוכמן',
-  label: 'Universal Music Group',
-  tracks: [
-    { name: 'Mikre Avud (מקרה אבוד)', youtubeId: 'rqFYO72tGAM' },
-    { name: 'Esh Kara (אש קרה)', youtubeId: 'mee8Wbkkz0g' },
-    { name: 'Relocation (רילוקיישן)', youtubeId: 'x2Hnau8S8_M' },
-  ],
-};
-
-const featured = [
-  { title: 'I Don\'t Want It', youtubeId: '8D5vmPjjY14', note: 'feat. Jane & The Boy · 81K views' },
-  { title: 'Crime Scene', youtubeId: 'WWGpMjmSahc', note: '14K views' },
-  { title: 'Bulldozer', youtubeId: 'cNpgPLwSV10', note: '8.1K views' },
-];
-
-const albums = [
-  { title: 'Beat of Opera', style: 'Uplifting Dramatic Electronic', year: '2024', youtubeList: 'OLAK5uy_kSoUHYwYWN1YT3knefjDKBGzfkM5Qt-Hw' },
-  { title: 'Satie (Arr. for Cello)', style: 'Electronic Reggae', year: '2024', youtubeList: 'OLAK5uy_mHioK6xtzf7VV3a_2VjCLB78n8I5rEKy8' },
-  { title: 'Rash', style: 'Funky Rock', year: '2023' },
-  { title: 'Swamp It Up', style: 'Thrilling Punk Rock', year: '2023' },
-  { title: 'De l\'esprit', style: 'Sparkly Disco Pop', year: '2023', youtubeList: 'OLAK5uy_mEZx5SuE0vKW723PG5Q7xdvEDTbJMs9KQ' },
-  { title: 'Royal', style: 'Carefree Corporate Vibes', year: '2023' },
-  { title: 'Clone', style: 'Carefree Electronic Pop', year: '2022', youtubeList: 'OLAK5uy_m3yJm1vuHXIK7w5cN1d-e96rt4wl3op9s' },
-  { title: 'All Night', style: 'Retro Electronic Pop', year: '2022' },
-  { title: 'Crop', style: 'Smooth Melodic House' },
-  { title: 'Journal', style: 'Smooth Retro Funk' },
-  { title: 'Broken Things', style: 'Dark Playful Funk' },
-  { title: 'Deep Connection', style: 'Spacey Electronic Hip Hop' },
-  { title: 'Night Crawlers', style: 'Dark \'80s Pop' },
-];
-
-const remixes = [
-  { title: 'Out of Body', youtubeId: '90jjAeq-E2c', with: 'Yuval Maayan & Zach Sorgen' },
-  { title: 'Best of Luck', youtubeId: '0Dfc-AR5Hjk', with: 'Katrina Stone' },
-  { title: 'Entr\'acte: Act 4 (Carmen)', youtubeId: 'KI4_ovMCg7s', with: 'Jerusalem Symphony Orchestra' },
-  { title: 'Cherubino\'s Aria: Voi che sapete', youtubeId: 'qrgrtQSAdwU', with: 'Jerusalem Symphony Orchestra' },
-  { title: 'Gnossienne no. 1', youtubeId: '_WjSxtbldow', with: 'Erik Satie' },
-];
-
-const scoring = [
-  { title: 'SILENCE Triptychon', type: 'Film', with: 'Guy Goldstein', link: 'https://www.youtube.com/watch?v=S59oswY3kQs' },
-  { title: 'Matir Agunot (מתיר עגונות)', type: 'TV · Kan 11', with: 'Assaf Talmudi', year: '2019', link: 'https://www.youtube.com/playlist?list=PLt40gjLOZkQ7V6msfroZyzXo1CdHA4AmC' },
-  { title: 'Ehad al Ehad (אחד על אחד)', type: 'TV · Kan 11', with: 'Assaf Talmudi', link: 'https://www.youtube.com/playlist?list=PLLttfoK87AdVg-SfJGctxipYGZEBarDOL' },
-  { title: 'Doharim (דוהרים)', type: 'Theater · Tmuna', with: 'Ilan Torn & Hagi Linik', year: '2012', link: 'https://www.tmu-na.org.il/?CategoryID=166&ArticleID=2441' },
-];
+const collaborations = collaborationsData.items;
+const featured = featuredData.items;
+const albums = albumsData.items;
+const remixes = remixesData.items;
+const scoring = scoringData.items;
 ---
 
 <Base title="Music | Kesem Records">
@@ -165,11 +123,11 @@ const scoring = [
     <!-- ═══ LISTEN ═══ -->
     <div class="section listen">
       <h2>Listen</h2>
-      <div class="links">
-        <a href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener noreferrer">Spotify</a>
-        <a href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://soundcloud.com/avi-tuchman" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-        <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer">Artlist</a>
+      <div class="icon-links">
+        <a href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener noreferrer" title="Spotify"><Icon name="spotify" /></a>
+        <a href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener noreferrer" title="YouTube"><Icon name="youtube" /></a>
+        <a href="https://soundcloud.com/avi-tuchman" target="_blank" rel="noopener noreferrer" title="SoundCloud"><Icon name="soundcloud" /></a>
+        <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer" title="Artlist"><Icon name="artlist" /></a>
       </div>
     </div>
   </section>
@@ -355,15 +313,20 @@ const scoring = [
     padding-top: 1rem;
   }
 
-  .links {
+  .icon-links {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 1.8rem;
+    align-items: center;
   }
 
-  .links a {
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+  .icon-links a {
+    color: var(--fg);
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+
+  .icon-links a:hover {
+    opacity: 1;
   }
 
   /* ── Mobile ── */

@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "Beat of Opera",
+      "year": "2024",
+      "description": "Classical compositions reimagined as electronic remixes. Collaboration with the Jerusalem Symphony Orchestra conducted by Yishai Steckler. Carmen and Cherubino's Aria reworked through electronic production.",
+      "tags": ["classical", "remix", "orchestral", "electronic"],
+      "link": "https://www.youtube.com/playlist?list=OLAK5uy_kSoUHYwYWN1YT3knefjDKBGzfkM5Qt-Hw"
+    },
+    {
+      "title": "Noa Faran Collaboration",
+      "year": "2024 - 2025",
+      "description": "Full production partnership with vocalist Noa Faran. Three singles released through Universal Music Group: Mikre Avud (42K views), Esh Kara, and Relocation. Composition, arrangement, production and mix.",
+      "tags": ["pop", "production", "universal music"],
+      "link": ""
+    },
+    {
+      "title": "Clone - DoGBeaT Remixes",
+      "year": "2022",
+      "description": "Remix album featuring reimagined tracks from international artists including Jane & The Boy. Lead single \"I Don't Want It\" reached 81K YouTube views and 40K+ Spotify streams.",
+      "tags": ["remix", "electronic", "pop"],
+      "link": "https://www.youtube.com/playlist?list=OLAK5uy_m3yJm1vuHXIK7w5cN1d-e96rt4wl3op9s"
+    },
+    {
+      "title": "De l'esprit - DoGBeaT Remix",
+      "year": "2023",
+      "description": "Sparkly disco pop remixes featuring collaborations with Yuval Maayan, Zach Sorgen, and Katrina Stone. Blending funk, rock and indie with electronic production.",
+      "tags": ["disco", "funk", "remix"],
+      "link": "https://www.youtube.com/playlist?list=OLAK5uy_mEZx5SuE0vKW723PG5Q7xdvEDTbJMs9KQ"
+    },
+    {
+      "title": "Satie (Arr. for Cello) - DoGBeaT Remix",
+      "year": "2024",
+      "description": "Reimagined works of Erik Satie arranged for cello with electronic production. Includes Gnossienne no. 1 & 3 and Gymnopédie no. 1. Released on Artlist Classics.",
+      "tags": ["classical", "remix", "electronic", "cello"],
+      "link": "https://www.youtube.com/playlist?list=OLAK5uy_mHioK6xtzf7VV3a_2VjCLB78n8I5rEKy8"
+    },
+    {
+      "title": "Artlist Catalog",
+      "year": "Ongoing",
+      "description": "Artlist Original artist with 13 albums and 20+ tracks available for royalty-free licensing. Genres spanning retro, electronic, funk, rock, hip hop, reggae, lounge, and corporate.",
+      "tags": ["licensing", "artlist", "royalty-free"],
+      "link": "https://artlist.io/royalty-free-music/artist/dogbeat/1570"
+    },
+    {
+      "title": "Theater & Television",
+      "year": "2012 - Present",
+      "description": "Original music, composition, performance and mix for theatrical productions and TV series. Credits include Matir Agunot on Kan 11 and Ehad al Ehad with Assaf Talmudi, and Doharim at Tmuna Theater, Tel Aviv (23 performances).",
+      "tags": ["theater", "tv", "scoring", "composition"],
+      "link": ""
+    },
+    {
+      "title": "Mixing & Mastering",
+      "year": "Ongoing",
+      "description": "Professional mixing and mastering services. Analog-inspired processing with digital precision. Every mix is treated as a unique sonic puzzle.",
+      "tags": ["mixing", "mastering", "studio"],
+      "link": ""
+    }
+  ]
+}

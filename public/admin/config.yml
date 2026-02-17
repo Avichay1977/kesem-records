@@ -1,0 +1,113 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "music"
+    label: "Music"
+    files:
+      - name: "collaborations"
+        label: "Israeli Music - Collaborations"
+        file: "src/data/collaborations.json"
+        format: json
+        fields:
+          - label: "Collaborations"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Artist Name", name: "artist", widget: "string" }
+              - { label: "Artist (Hebrew)", name: "artistHe", widget: "string" }
+              - { label: "Work Title", name: "work", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
+
+      - name: "duo"
+        label: "Noa Faran Duo"
+        file: "src/data/duo.json"
+        format: json
+        fields:
+          - { label: "Artist Name", name: "artist", widget: "string" }
+          - { label: "Artist (Hebrew)", name: "artistHe", widget: "string" }
+          - { label: "Label", name: "label", widget: "string" }
+          - label: "Tracks"
+            name: "tracks"
+            widget: "list"
+            fields:
+              - { label: "Track Name", name: "name", widget: "string" }
+              - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
+
+      - name: "featured"
+        label: "International - Featured Tracks"
+        file: "src/data/featured.json"
+        format: json
+        fields:
+          - label: "Featured Tracks"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
+              - { label: "Note (views, feat.)", name: "note", widget: "string" }
+
+      - name: "albums"
+        label: "Instrumental - Albums"
+        file: "src/data/albums.json"
+        format: json
+        fields:
+          - label: "Albums"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Style", name: "style", widget: "string" }
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "YouTube Playlist ID", name: "youtubeList", widget: "string", required: false }
+
+      - name: "remixes"
+        label: "Remixes"
+        file: "src/data/remixes.json"
+        format: json
+        fields:
+          - label: "Remixes"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "YouTube Video ID", name: "youtubeId", widget: "string" }
+              - { label: "With (artist)", name: "with", widget: "string" }
+
+      - name: "scoring"
+        label: "Film, TV & Theater"
+        file: "src/data/scoring.json"
+        format: json
+        fields:
+          - label: "Productions"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Type (Film / TV · Network / Theater · Venue)", name: "type", widget: "string" }
+              - { label: "With (collaborator)", name: "with", widget: "string", required: false }
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+
+  - name: "work"
+    label: "Work / Projects"
+    files:
+      - name: "projects"
+        label: "Projects"
+        file: "src/data/projects.json"
+        format: json
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+              - { label: "Link", name: "link", widget: "string", required: false }
