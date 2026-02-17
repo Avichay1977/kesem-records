@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Avichay1977/kesem-records
   branch: master
 
 media_folder: "public/images"
