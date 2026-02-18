@@ -1,0 +1,24 @@
+{
+  "siteTitle": "Kesem Records",
+  "siteDescription": "Sound design, music production & creative tools by DoGBeaT.",
+  "nav": {
+    "logoText": "Kesem Records",
+    "links": [
+      { "label": "Music", "url": "/music" },
+      { "label": "About", "url": "/about" },
+      { "label": "Work", "url": "/work" },
+      { "label": "Contact", "url": "/contact" }
+    ]
+  },
+  "footer": {
+    "text": "Kesem Records. All rights reserved."
+  },
+  "social": [
+    { "name": "spotify", "url": "https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4", "title": "Spotify" },
+    { "name": "youtube", "url": "https://www.youtube.com/@DoGBeaT77", "title": "YouTube" },
+    { "name": "soundcloud", "url": "https://soundcloud.com/avi-tuchman", "title": "SoundCloud" },
+    { "name": "artlist", "url": "https://artlist.io/royalty-free-music/artist/dogbeat/1570", "title": "Artlist" },
+    { "name": "instagram", "url": "https://instagram.com/dogbeat77", "title": "Instagram" },
+    { "name": "whatsapp", "url": "https://wa.me/972528801608", "title": "WhatsApp" }
+  ]
+}

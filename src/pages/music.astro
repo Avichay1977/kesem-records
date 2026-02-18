@@ -7,6 +7,7 @@ import featuredData from '../data/featured.json';
 import albumsData from '../data/albums.json';
 import remixesData from '../data/remixes.json';
 import scoringData from '../data/scoring.json';
+import settings from '../data/settings.json';
 
 const collaborations = collaborationsData.items;
 const featured = featuredData.items;
@@ -20,7 +21,7 @@ const scoring = scoringData.items;
     <h1>Music</h1>
     <div class="divider"></div>
 
-    <!-- ═══ ISRAELI MUSIC ═══ -->
+    <!-- Israeli Music -->
     <div class="section">
       <h2>Israeli Music</h2>
 
@@ -28,7 +29,7 @@ const scoring = scoringData.items;
         <div class="line">
           <span class="line-title">
             {c.artist}
-            <a href={`https://www.youtube.com/watch?v=${c.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">▶</a>
+            <a href={`https://www.youtube.com/watch?v=${c.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">&#9654;</a>
           </span>
           <span class="line-sub">{c.work}</span>
           <span class="line-role">{c.role}</span>
@@ -38,7 +39,7 @@ const scoring = scoringData.items;
       <div class="line line-duo">
         <span class="line-title">
           {duo.artist}
-          <a href={`https://www.youtube.com/watch?v=${duo.tracks[0].youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">▶</a>
+          <a href={`https://www.youtube.com/watch?v=${duo.tracks[0].youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">&#9654;</a>
         </span>
         <span class="line-label">{duo.label}</span>
         <div class="duo-tracks">
@@ -52,7 +53,7 @@ const scoring = scoringData.items;
       </div>
     </div>
 
-    <!-- ═══ INTERNATIONAL ═══ -->
+    <!-- International -->
     <div class="section">
       <h2>International</h2>
 
@@ -60,14 +61,14 @@ const scoring = scoringData.items;
         <div class="line">
           <span class="line-title">
             {t.title}
-            <a href={`https://www.youtube.com/watch?v=${t.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">▶</a>
+            <a href={`https://www.youtube.com/watch?v=${t.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">&#9654;</a>
           </span>
           <span class="line-sub">{t.note}</span>
         </div>
       ))}
     </div>
 
-    <!-- ═══ INSTRUMENTAL ═══ -->
+    <!-- Instrumental -->
     <div class="section">
       <h2>Instrumental</h2>
       <p class="section-note">
@@ -90,7 +91,7 @@ const scoring = scoringData.items;
       </div>
     </div>
 
-    <!-- ═══ REMIXES ═══ -->
+    <!-- Remixes -->
     <div class="section">
       <h2>Remixes</h2>
 
@@ -98,14 +99,14 @@ const scoring = scoringData.items;
         <div class="line">
           <span class="line-title">
             {r.title}
-            <a href={`https://www.youtube.com/watch?v=${r.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">▶</a>
+            <a href={`https://www.youtube.com/watch?v=${r.youtubeId}`} target="_blank" rel="noopener noreferrer" class="yt">&#9654;</a>
           </span>
           <span class="line-sub">with {r.with}</span>
         </div>
       ))}
     </div>
 
-    <!-- ═══ SCORING ═══ -->
+    <!-- Film, TV & Theater -->
     <div class="section">
       <h2>Film, TV & Theater</h2>
 
@@ -113,21 +114,20 @@ const scoring = scoringData.items;
         <div class="line">
           <span class="line-title">
             {s.title}
-            {s.link && <a href={s.link} target="_blank" rel="noopener noreferrer" class="yt">▶</a>}
+            {s.link && <a href={s.link} target="_blank" rel="noopener noreferrer" class="yt">&#9654;</a>}
           </span>
-          <span class="line-sub">{s.type}{s.with ? ` · ${s.with}` : ''}{s.year ? ` · ${s.year}` : ''}</span>
+          <span class="line-sub">{s.type}{s.with ? ` \u00b7 ${s.with}` : ''}{s.year ? ` \u00b7 ${s.year}` : ''}</span>
         </div>
       ))}
     </div>
 
-    <!-- ═══ LISTEN ═══ -->
+    <!-- Listen -->
     <div class="section listen">
       <h2>Listen</h2>
       <div class="icon-links">
-        <a href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener noreferrer" title="Spotify"><Icon name="spotify" /></a>
-        <a href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener noreferrer" title="YouTube"><Icon name="youtube" /></a>
-        <a href="https://soundcloud.com/avi-tuchman" target="_blank" rel="noopener noreferrer" title="SoundCloud"><Icon name="soundcloud" /></a>
-        <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer" title="Artlist"><Icon name="artlist" /></a>
+        {settings.social.filter(s => ['spotify', 'youtube', 'soundcloud', 'artlist'].includes(s.name)).map((s) => (
+          <a href={s.url} target="_blank" rel="noopener noreferrer" title={s.title}><Icon name={s.name} /></a>
+        ))}
       </div>
     </div>
   </section>
@@ -147,7 +147,6 @@ const scoring = scoringData.items;
     margin: 2rem 0;
   }
 
-  /* ── Sections ── */
   .section {
     margin-bottom: 4rem;
   }
@@ -171,7 +170,6 @@ const scoring = scoringData.items;
     color: var(--fg);
   }
 
-  /* ── Lines (universal row) ── */
   .line {
     padding: 0.9rem 0;
     border-bottom: 1px solid var(--border);
@@ -188,13 +186,8 @@ const scoring = scoringData.items;
     color: var(--fg);
   }
 
-  a.line-title {
-    text-decoration: none;
-  }
-
-  a.line-title:hover {
-    opacity: 0.7;
-  }
+  a.line-title { text-decoration: none; }
+  a.line-title:hover { opacity: 0.7; }
 
   .yt {
     font-size: 0.55rem;
@@ -205,9 +198,7 @@ const scoring = scoringData.items;
     transition: opacity 0.2s;
   }
 
-  .yt:hover {
-    opacity: 1;
-  }
+  .yt:hover { opacity: 1; }
 
   .line-sub {
     display: block;
@@ -227,10 +218,7 @@ const scoring = scoringData.items;
     opacity: 0.7;
   }
 
-  /* ── Duo ── */
-  .line-duo {
-    padding: 1.2rem 0;
-  }
+  .line-duo { padding: 1.2rem 0; }
 
   .line-label {
     display: block;
@@ -251,20 +239,14 @@ const scoring = scoringData.items;
     gap: 0.4rem;
   }
 
-  .duo-tracks a {
-    color: var(--fg);
-  }
-
-  .duo-tracks a:hover {
-    opacity: 0.7;
-  }
+  .duo-tracks a { color: var(--fg); }
+  .duo-tracks a:hover { opacity: 0.7; }
 
   .sep {
     color: var(--accent);
     font-size: 0.7rem;
   }
 
-  /* ── Albums ── */
   .albums {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -276,9 +258,7 @@ const scoring = scoringData.items;
     border-bottom: 1px solid var(--border);
   }
 
-  .album:nth-child(odd) {
-    padding-right: 1.5rem;
-  }
+  .album:nth-child(odd) { padding-right: 1.5rem; }
 
   .album:nth-child(even) {
     padding-left: 1.5rem;
@@ -291,14 +271,8 @@ const scoring = scoringData.items;
     letter-spacing: 0.02em;
   }
 
-  a.album-name {
-    color: var(--fg);
-    text-decoration: none;
-  }
-
-  a.album-name:hover {
-    opacity: 0.7;
-  }
+  a.album-name { color: var(--fg); text-decoration: none; }
+  a.album-name:hover { opacity: 0.7; }
 
   .album-style {
     display: block;
@@ -308,10 +282,7 @@ const scoring = scoringData.items;
     letter-spacing: 0.03em;
   }
 
-  /* ── Listen ── */
-  .listen {
-    padding-top: 1rem;
-  }
+  .listen { padding-top: 1rem; }
 
   .icon-links {
     display: flex;
@@ -325,23 +296,11 @@ const scoring = scoringData.items;
     transition: opacity 0.2s;
   }
 
-  .icon-links a:hover {
-    opacity: 1;
-  }
+  .icon-links a:hover { opacity: 1; }
 
-  /* ── Mobile ── */
   @media (max-width: 480px) {
-    .albums {
-      grid-template-columns: 1fr;
-    }
-
-    .album:nth-child(even) {
-      padding-left: 0;
-      border-left: none;
-    }
-
-    .album:nth-child(odd) {
-      padding-right: 0;
-    }
+    .albums { grid-template-columns: 1fr; }
+    .album:nth-child(even) { padding-left: 0; border-left: none; }
+    .album:nth-child(odd) { padding-right: 0; }
   }
 </style>

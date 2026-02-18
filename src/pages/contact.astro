@@ -1,56 +1,48 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import contact from '../data/contact.json';
+import settings from '../data/settings.json';
 ---
 
 <Base title="Contact | Kesem Records">
   <section class="contact">
-    <h1>Let's Connect.</h1>
+    <h1 data-editable data-file="contact" data-path="pageTitle">{contact.pageTitle}</h1>
     <div class="divider"></div>
 
     <div class="content">
-      <p class="lead">
-        For inquiries about music production, sound design, licensing,
-        or collaboration &mdash; I'd love to hear from you.
+      <p class="lead" data-editable data-file="contact" data-path="leadText">
+        {contact.leadText}
       </p>
 
       <div class="cta-block">
-        <h2>Get in Touch</h2>
-        <a href="mailto:tuchmanavi@gmail.com" class="email-cta">tuchmanavi@gmail.com</a>
+        <h2 data-editable data-file="contact" data-path="ctaTitle">{contact.ctaTitle}</h2>
+        <a href={`mailto:${contact.email}`} class="email-cta" data-editable data-file="contact" data-path="email">{contact.email}</a>
       </div>
 
       <div class="guide-block">
-        <h2>What to Include</h2>
+        <h2 data-editable data-file="contact" data-path="guideTitle">{contact.guideTitle}</h2>
         <ul class="guide-list">
-          <li>
-            <span class="guide-label">Project</span>
-            <span class="guide-desc">Brief description of your vision and goals</span>
-          </li>
-          <li>
-            <span class="guide-label">Timeline</span>
-            <span class="guide-desc">Ideal timeline and any references or examples</span>
-          </li>
-          <li>
-            <span class="guide-label">Location</span>
-            <span class="guide-desc">Where you're based &mdash; remote collaboration welcome</span>
-          </li>
+          {contact.guideItems.map((item, i) => (
+            <li>
+              <span class="guide-label" data-editable data-file="contact" data-path={`guideItems[${i}].label`}>{item.label}</span>
+              <span class="guide-desc" data-editable data-file="contact" data-path={`guideItems[${i}].description`}>{item.description}</span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div class="links-section">
         <div class="icon-links">
-          <a href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener noreferrer" title="Spotify"><Icon name="spotify" /></a>
-          <a href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener noreferrer" title="YouTube"><Icon name="youtube" /></a>
-          <a href="https://soundcloud.com/avi-tuchman" target="_blank" rel="noopener noreferrer" title="SoundCloud"><Icon name="soundcloud" /></a>
-          <a href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener noreferrer" title="Artlist"><Icon name="artlist" /></a>
-          <a href="https://instagram.com/dogbeat77" target="_blank" rel="noopener noreferrer" title="Instagram"><Icon name="instagram" /></a>
-          <a href="https://wa.me/972528801608" target="_blank" rel="noopener noreferrer" title="WhatsApp"><Icon name="whatsapp" /></a>
+          {settings.social.map((s) => (
+            <a href={s.url} target="_blank" rel="noopener noreferrer" title={s.title}><Icon name={s.name} /></a>
+          ))}
         </div>
       </div>
     </div>
 
     <div class="closing">
-      <p>Based in Israel &ensp;|&ensp; Collaborating Globally &ensp;|&ensp; Remote Ready.</p>
+      <p data-editable data-file="contact" data-path="closingText">{contact.closingText}</p>
     </div>
   </section>
 </Base>
@@ -78,7 +70,6 @@ import Icon from '../components/Icon.astro';
     margin-bottom: 3rem;
   }
 
-  /* ── Email CTA ── */
   .cta-block {
     margin-bottom: 3rem;
   }
@@ -98,7 +89,6 @@ import Icon from '../components/Icon.astro';
     padding-bottom: 2px;
   }
 
-  /* ── Brief Guide ── */
   .guide-block {
     margin-bottom: 3rem;
     padding-top: 2rem;
@@ -134,7 +124,6 @@ import Icon from '../components/Icon.astro';
     line-height: 1.6;
   }
 
-  /* ── Icon Links ── */
   .links-section {
     padding-top: 2rem;
     border-top: 1px solid var(--border);
@@ -156,7 +145,6 @@ import Icon from '../components/Icon.astro';
     opacity: 1;
   }
 
-  /* ── Closing ── */
   .closing {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -169,12 +157,10 @@ import Icon from '../components/Icon.astro';
     letter-spacing: 0.06em;
   }
 
-  /* ── C64 email override ── */
   :global([data-theme="commodore"]) .email-cta {
     font-size: 0.8rem;
   }
 
-  /* ── Responsive ── */
   @media (max-width: 480px) {
     .email-cta {
       font-size: 1.05rem;

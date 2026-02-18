@@ -1,10 +1,12 @@
 ---
+import settings from '../data/settings.json';
+
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { title = 'Kesem Records', description = 'Sound design, music production & creative tools by DoGBeaT.' } = Astro.props;
+const { title = settings.siteTitle, description = settings.siteDescription } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,12 +21,11 @@ const { title = 'Kesem Records', description = 'Sound design, music production &
   <body>
     <header class="header">
       <nav>
-        <a href="/" class="logo">Kesem Records</a>
+        <a href="/" class="logo" data-editable data-file="settings" data-path="nav.logoText">{settings.nav.logoText}</a>
         <div class="nav-links">
-          <a href="/music">Music</a>
-          <a href="/about">About</a>
-          <a href="/work">Work</a>
-          <a href="/contact">Contact</a>
+          {settings.nav.links.map((link) => (
+            <a href={link.url}>{link.label}</a>
+          ))}
         </div>
       </nav>
     </header>
@@ -34,7 +35,7 @@ const { title = 'Kesem Records', description = 'Sound design, music production &
     </main>
 
     <footer class="footer">
-      <p>&copy; {new Date().getFullYear()} Kesem Records. All rights reserved.</p>
+      <p data-editable data-file="settings" data-path="footer.text">&copy; {new Date().getFullYear()} {settings.footer.text}</p>
     </footer>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
@@ -70,6 +71,7 @@ const { title = 'Kesem Records', description = 'Sound design, music production &
         });
       })();
     </script>
+    <script src="/scripts/inline-editor.js" defer></script>
   </body>
 </html>
 

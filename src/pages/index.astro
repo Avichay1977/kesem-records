@@ -1,46 +1,34 @@
 ---
 import Base from '../layouts/Base.astro';
+import home from '../data/home.json';
 ---
 
 <Base title="Kesem Records">
   <section class="hero">
-    <h1>Kesem Records</h1>
-    <p class="tagline">Sound design & music production by DoGBeaT</p>
+    <h1 data-editable data-file="home" data-path="hero.title">{home.hero.title}</h1>
+    <p class="tagline" data-editable data-file="home" data-path="hero.tagline">{home.hero.tagline}</p>
     <div class="divider"></div>
-    <p class="intro">
-      Composer, multi-instrumentalist and producer. From '80s French disco
-      to classical remixes with the Jerusalem Symphony Orchestra. 13 albums
-      on Artlist. Distributed by Universal Music Group. All tracks composed,
-      performed, and mixed in-house.
+    <p class="intro" data-editable data-file="home" data-path="hero.intro">
+      {home.hero.intro}
     </p>
   </section>
 
   <section class="featured">
-    <h2>Selected Work</h2>
+    <h2 data-editable data-file="home" data-path="selectedWork.sectionTitle">{home.selectedWork.sectionTitle}</h2>
     <ul class="work-list">
-      <li>
-        <span class="work-title">I Don't Want It - DoGBeaT Remix</span>
-        <span class="work-desc">81K views / 40K+ Spotify streams &mdash; feat. Jane & The Boy</span>
-      </li>
-      <li>
-        <span class="work-title">Beat of Opera</span>
-        <span class="work-desc">Classical remixes with Jerusalem Symphony Orchestra</span>
-      </li>
-      <li>
-        <span class="work-title">Noa Faran & DoGBeaT</span>
-        <span class="work-desc">Mikre Avud, Esh Kara, Relocation &mdash; Universal Music Group</span>
-      </li>
-      <li>
-        <span class="work-title">Music Licensing</span>
-        <span class="work-desc">13 albums on Artlist &mdash; available for creators worldwide</span>
-      </li>
+      {home.selectedWork.items.map((item, i) => (
+        <li>
+          <span class="work-title" data-editable data-file="home" data-path={`selectedWork.items[${i}].title`}>{item.title}</span>
+          <span class="work-desc" data-editable data-file="home" data-path={`selectedWork.items[${i}].description`}>{item.description}</span>
+        </li>
+      ))}
     </ul>
-    <a href="/music" class="see-all">view all music &rarr;</a>
+    <a href={home.selectedWork.seeAllLink} class="see-all">{home.selectedWork.seeAllText} &rarr;</a>
   </section>
 
   <section class="philosophy">
-    <blockquote>
-      "All tracks composed, performed, and mixed by yours truly."
+    <blockquote data-editable data-file="home" data-path="philosophyQuote">
+      "{home.philosophyQuote}"
     </blockquote>
   </section>
 </Base>

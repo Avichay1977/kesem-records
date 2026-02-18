@@ -7,6 +7,7 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
+  # ── Music ──
   - name: "music"
     label: "Music"
     files:
@@ -95,6 +96,7 @@ collections:
               - { label: "Year", name: "year", widget: "string", required: false }
               - { label: "Link", name: "link", widget: "string", required: false }
 
+  # ── Work / Projects ──
   - name: "work"
     label: "Work / Projects"
     files:
@@ -112,3 +114,120 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
               - { label: "Link", name: "link", widget: "string", required: false }
+
+  # ── Pages ──
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/data/home.json"
+        format: json
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "text" }
+          - label: "Selected Work"
+            name: "selectedWork"
+            widget: "object"
+            fields:
+              - { label: "Section Title", name: "sectionTitle", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string" }
+              - { label: "See All Text", name: "seeAllText", widget: "string" }
+              - { label: "See All Link", name: "seeAllLink", widget: "string" }
+          - { label: "Philosophy Quote", name: "philosophyQuote", widget: "text" }
+
+      - name: "about"
+        label: "About Page"
+        file: "src/data/about.json"
+        format: json
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Bio"
+            name: "bio"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "markdown" }
+          - label: "What We Do"
+            name: "whatWeDo"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Approach"
+            name: "approach"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Genres"
+            name: "genres"
+            widget: "list"
+            field: { label: "Genre", name: "genre", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "src/data/contact.json"
+        format: json
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string" }
+          - { label: "Lead Text", name: "leadText", widget: "text" }
+          - { label: "CTA Title", name: "ctaTitle", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Guide Title", name: "guideTitle", widget: "string" }
+          - label: "Guide Items"
+            name: "guideItems"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+          - { label: "Closing Text", name: "closingText", widget: "string" }
+
+  # ── Site Settings ──
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General"
+        file: "src/data/settings.json"
+        format: json
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Logo Text", name: "logoText", widget: "string" }
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+          - label: "Social Links"
+            name: "social"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "name", widget: "select", options: ["spotify", "youtube", "soundcloud", "artlist", "instagram", "whatsapp"] }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }

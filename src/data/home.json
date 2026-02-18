@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Kesem Records",
+    "tagline": "Sound design & music production by DoGBeaT",
+    "intro": "Composer, multi-instrumentalist and producer. From '80s French disco to classical remixes with the Jerusalem Symphony Orchestra. 13 albums on Artlist. Distributed by Universal Music Group. All tracks composed, performed, and mixed in-house."
+  },
+  "selectedWork": {
+    "sectionTitle": "Selected Work",
+    "items": [
+      {
+        "title": "I Don't Want It - DoGBeaT Remix",
+        "description": "81K views / 40K+ Spotify streams \u2014 feat. Jane & The Boy"
+      },
+      {
+        "title": "Beat of Opera",
+        "description": "Classical remixes with Jerusalem Symphony Orchestra"
+      },
+      {
+        "title": "Noa Faran & DoGBeaT",
+        "description": "Mikre Avud, Esh Kara, Relocation \u2014 Universal Music Group"
+      },
+      {
+        "title": "Music Licensing",
+        "description": "13 albums on Artlist \u2014 available for creators worldwide"
+      }
+    ],
+    "seeAllText": "view all music",
+    "seeAllLink": "/music"
+  },
+  "philosophyQuote": "All tracks composed, performed, and mixed by yours truly."
+}

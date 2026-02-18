@@ -1,84 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
+import about from '../data/about.json';
 ---
 
 <Base title="About | Kesem Records">
   <section class="about">
-    <h1>About</h1>
+    <h1 data-editable data-file="about" data-path="pageTitle">{about.pageTitle}</h1>
     <div class="divider"></div>
 
     <div class="content">
-      <p>
-        Kesem Records is a sound design and music production studio
-        founded by Avichai Tuchman (DoGBeaT). We specialize in crafting
-        sonic experiences that bridge the gap between technology and
-        emotion &mdash; from retro funk to classical remixes, from
-        electronic beats to cinematic scores.
+      <p data-editable data-file="about" data-path="intro">
+        {about.intro}
       </p>
 
-      <h2>DoGBeaT</h2>
-      <p>
-        I'm Avichay Tuchman, AKA DoGBeaT &mdash; a musician who embodies the
-        energy of '80s French disco with the raw power of rock 'n' roll.
-        When I'm not rocking out with the folk-punk band
-        <a href="https://www.youtube.com/@OyDivision" target="_blank" rel="noopener noreferrer">Oy Division</a>,
-        you'll find me in the studio, crafting infectious melodies for
-        TV series, theater productions, and my own solo projects.
-      </p>
-      <p>
-        A multi-instrumentalist and mix technician, I've spent the last
-        decade producing and playing for a diverse range of artists &mdash;
-        from
-        <a href="https://www.youtube.com/watch?v=6G7rzlSWPQ4" target="_blank" rel="noopener noreferrer">Shlomi Shaban</a>,
-        <a href="https://www.youtube.com/watch?v=XVO2ubqcDVU" target="_blank" rel="noopener noreferrer">Shuli Rand</a>,
-        <a href="https://www.youtube.com/watch?v=dBdmci7WtUw" target="_blank" rel="noopener noreferrer">Sofi Tsedaka</a> and
-        <a href="https://www.youtube.com/watch?v=TZQksnr9ofs" target="_blank" rel="noopener noreferrer">Shai Lahav</a>
-        to my duo with
-        <a href="https://www.youtube.com/watch?v=rqFYO72tGAM" target="_blank" rel="noopener noreferrer">Noa Faran</a>
-        (Universal Music Group) &mdash; many of whom have become radio
-        regulars. My passion for music transcends genre, drawing inspiration
-        from everything that grooves and moves the soul.
-      </p>
-      <p>
-        I also compose for screen &mdash; scoring TV series for
-        <a href="https://www.youtube.com/playlist?list=PLt40gjLOZkQ7V6msfroZyzXo1CdHA4AmC" target="_blank" rel="noopener noreferrer">Kan 11</a>
-        with Assaf Talmudi, and creating music for film and theater.
-      </p>
-      <p>
-        With a knack for blending catchy hooks with unexpected twists,
-        my music is sure to get you moving and leave you wanting more.
+      <h2 data-editable data-file="about" data-path="bio.title">{about.bio.title}</h2>
+      {about.bio.paragraphs.map((p, i) => (
+        <p data-editable data-file="about" data-path={`bio.paragraphs[${i}]`} data-html="true" set:html={p} />
+      ))}
+
+      <h2 data-editable data-file="about" data-path="whatWeDo.title">{about.whatWeDo.title}</h2>
+      <p data-editable data-file="about" data-path="whatWeDo.text">
+        {about.whatWeDo.text}
       </p>
 
-      <h2>What We Do</h2>
-      <p>
-        Music production, composition, arrangement, sound design, mixing
-        and mastering. All tracks composed, performed, and mixed in-house.
-        Our music is available for licensing through Artlist for creators
-        worldwide.
-      </p>
-
-      <h2>Approach</h2>
-      <p>
-        We believe in precision without sterility. Each sound is
-        intentional, each silence meaningful. Our process combines analog
-        warmth with digital precision, vintage character with modern
-        clarity.
+      <h2 data-editable data-file="about" data-path="approach.title">{about.approach.title}</h2>
+      <p data-editable data-file="about" data-path="approach.text">
+        {about.approach.text}
       </p>
 
       <h2>Genres</h2>
       <div class="genres">
-        <span class="genre">Retro</span>
-        <span class="genre">Electronic</span>
-        <span class="genre">Funk</span>
-        <span class="genre">Rock</span>
-        <span class="genre">Hip Hop</span>
-        <span class="genre">Pop</span>
-        <span class="genre">Reggae</span>
-        <span class="genre">Lounge</span>
-        <span class="genre">Soul & RnB</span>
-        <span class="genre">Indie</span>
-        <span class="genre">Corporate</span>
-        <span class="genre">Classical Remix</span>
+        {about.genres.map((genre) => (
+          <span class="genre">{genre}</span>
+        ))}
       </div>
     </div>
   </section>
@@ -108,7 +62,7 @@ import Base from '../layouts/Base.astro';
     line-height: 1.8;
   }
 
-  .content p a {
+  .content p :global(a) {
     color: var(--fg);
   }
 

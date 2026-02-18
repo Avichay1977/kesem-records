@@ -1,0 +1,13 @@
+{
+  "pageTitle": "Let's Connect.",
+  "leadText": "For inquiries about music production, sound design, licensing, or collaboration \u2014 I'd love to hear from you.",
+  "ctaTitle": "Get in Touch",
+  "email": "tuchmanavi@gmail.com",
+  "guideTitle": "What to Include",
+  "guideItems": [
+    { "label": "Project", "description": "Brief description of your vision and goals" },
+    { "label": "Timeline", "description": "Ideal timeline and any references or examples" },
+    { "label": "Location", "description": "Where you're based \u2014 remote collaboration welcome" }
+  ],
+  "closingText": "Based in Israel \u2003|\u2003 Collaborating Globally \u2003|\u2003 Remote Ready."
+}

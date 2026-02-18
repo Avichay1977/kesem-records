@@ -1,0 +1,22 @@
+{
+  "pageTitle": "About",
+  "intro": "Kesem Records is a sound design and music production studio founded by Avichai Tuchman (DoGBeaT). We specialize in crafting sonic experiences that bridge the gap between technology and emotion \u2014 from retro funk to classical remixes, from electronic beats to cinematic scores.",
+  "bio": {
+    "title": "DoGBeaT",
+    "paragraphs": [
+      "I'm Avichay Tuchman, AKA DoGBeaT \u2014 a musician who embodies the energy of '80s French disco with the raw power of rock 'n' roll. When I'm not rocking out with the folk-punk band <a href=\"https://www.youtube.com/@OyDivision\" target=\"_blank\" rel=\"noopener noreferrer\">Oy Division</a>, you'll find me in the studio, crafting infectious melodies for TV series, theater productions, and my own solo projects.",
+      "A multi-instrumentalist and mix technician, I've spent the last decade producing and playing for a diverse range of artists \u2014 from <a href=\"https://www.youtube.com/watch?v=6G7rzlSWPQ4\" target=\"_blank\" rel=\"noopener noreferrer\">Shlomi Shaban</a>, <a href=\"https://www.youtube.com/watch?v=XVO2ubqcDVU\" target=\"_blank\" rel=\"noopener noreferrer\">Shuli Rand</a>, <a href=\"https://www.youtube.com/watch?v=dBdmci7WtUw\" target=\"_blank\" rel=\"noopener noreferrer\">Sofi Tsedaka</a> and <a href=\"https://www.youtube.com/watch?v=TZQksnr9ofs\" target=\"_blank\" rel=\"noopener noreferrer\">Shai Lahav</a> to my duo with <a href=\"https://www.youtube.com/watch?v=rqFYO72tGAM\" target=\"_blank\" rel=\"noopener noreferrer\">Noa Faran</a> (Universal Music Group) \u2014 many of whom have become radio regulars. My passion for music transcends genre, drawing inspiration from everything that grooves and moves the soul.",
+      "I also compose for screen \u2014 scoring TV series for <a href=\"https://www.youtube.com/playlist?list=PLt40gjLOZkQ7V6msfroZyzXo1CdHA4AmC\" target=\"_blank\" rel=\"noopener noreferrer\">Kan 11</a> with Assaf Talmudi, and creating music for film and theater.",
+      "With a knack for blending catchy hooks with unexpected twists, my music is sure to get you moving and leave you wanting more."
+    ]
+  },
+  "whatWeDo": {
+    "title": "What We Do",
+    "text": "Music production, composition, arrangement, sound design, mixing and mastering. All tracks composed, performed, and mixed in-house. Our music is available for licensing through Artlist for creators worldwide."
+  },
+  "approach": {
+    "title": "Approach",
+    "text": "We believe in precision without sterility. Each sound is intentional, each silence meaningful. Our process combines analog warmth with digital precision, vintage character with modern clarity."
+  },
+  "genres": ["Retro", "Electronic", "Funk", "Rock", "Hip Hop", "Pop", "Reggae", "Lounge", "Soul & RnB", "Indie", "Corporate", "Classical Remix"]
+}
