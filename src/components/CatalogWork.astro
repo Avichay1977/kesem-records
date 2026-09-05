@@ -1,0 +1,20 @@
+---
+import Part1 from './CatalogWork1.astro';
+import Part2 from './CatalogWork2.astro';
+import Part3 from './CatalogWork3.astro';
+---
+<section aria-labelledby="kc-work-title" class="kc-section" data-kc-section-panel="work" id="kc-work">
+  <header class="kc-section-head">
+    <p class="kc-section-index">02 / SELECTED CATALOGUE</p>
+    <h2 id="kc-work-title">Production &amp; Performance</h2>
+    <p>Records made with other artists. From production to performance.</p>
+  </header>
+  <div aria-label="Production & Performance filters" class="kc-filters" data-kc-filters="work" hidden role="group">
+    <button aria-pressed="true" data-kc-filter="all" type="button">All work</button>
+    <button aria-pressed="false" data-kc-filter="production" type="button">Music Production</button>
+    <button aria-pressed="false" data-kc-filter="performance" type="button">Instrumental Performance</button>
+  </div>
+  <div class="kc-section-meta"><span data-kc-section-count>15 releases</span><span>Newest first</span></div>
+  <div class="kc-grid"><Part1 /><Part2 /><Part3 /></div>
+  <p class="kc-empty" data-kc-empty hidden>No matching releases in this section.</p>
+</section>
