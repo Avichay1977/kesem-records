@@ -1,0 +1,21 @@
+---
+import Part1 from './CatalogProjects1.astro';
+import Part2 from './CatalogProjects2.astro';
+import Part3 from './CatalogProjects3.astro';
+---
+<section aria-labelledby="kc-projects-title" class="kc-section" data-kc-section-panel="projects" id="kc-projects">
+  <header class="kc-section-head">
+    <p class="kc-section-index">01 / SELECTED CATALOGUE</p>
+    <h2 id="kc-projects-title">DoGBeaT Projects</h2>
+    <p>Original music, artist collaborations and reworks.</p>
+  </header>
+  <div aria-label="DoGBeaT Projects filters" class="kc-filters" data-kc-filters="projects" hidden role="group">
+    <button aria-pressed="true" data-kc-filter="all" type="button">All projects</button>
+    <button aria-pressed="false" data-kc-filter="noa" type="button">Noa Faran × DoGBeaT</button>
+    <button aria-pressed="false" data-kc-filter="artlist" type="button">Artlist / Music for Media</button>
+    <button aria-pressed="false" data-kc-filter="remixes" type="button">Remixes</button>
+  </div>
+  <div class="kc-section-meta"><span data-kc-section-count>15 releases</span><span>Newest first</span></div>
+  <div class="kc-grid"><Part1 /><Part2 /><Part3 /></div>
+  <p class="kc-empty" data-kc-empty hidden>No matching releases in this section.</p>
+</section>
