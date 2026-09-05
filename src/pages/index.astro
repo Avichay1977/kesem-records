@@ -1,137 +1,88 @@
 ---
-import Base from '../layouts/Base.astro';
-import home from '../data/home.json';
+import CatalogProjects from '../components/CatalogProjects.astro';
+import CatalogWork from '../components/CatalogWork.astro';
+
+const artists = [
+  'Avichai Tuchman',
+  'Balkan Beat Box',
+  'DoGBeaT',
+  'DoGBeaT & Artlist Classics',
+  'DoGBeaT feat. Artlist Classics',
+  'Everest feat. Renana Ne’eman',
+  'Haze’evot',
+  'Hemi Rudner',
+  'Ido Shenzur',
+  'Kof Snae',
+  'Loren Milk',
+  'Noa Faran & DoGBeaT',
+  'Noam Rotem',
+  'Rafi Adar',
+  'Reines Girls',
+  'Roei Freilich',
+  'Shay Lahav & Ran Golani',
+  'Shlomi Shaban',
+  'Shuli Rand'
+];
 ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Selected work by Avichai Tuchman / DoGBeaT — production, performance, original music and remixes." />
+    <title>Kesem Records — Avichai Tuchman / DoGBeaT</title>
+    <link rel="stylesheet" href="/catalog.css" />
+  </head>
+  <body>
+    <header class="preview-nav">
+      <div class="preview-nav-inner">
+        <a aria-label="Kesem Records home" class="preview-brand" href="#kc-title"><span class="brand-text">KESEM RECORDS</span></a>
+        <nav aria-label="Main" class="preview-links">
+          <a href="#kc-projects">Projects</a>
+          <a href="#kc-work">Production &amp; Performance</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
 
-<Base title="Kesem Records">
-  <section class="hero">
-    <h1 data-editable data-file="home" data-path="hero.title">{home.hero.title}</h1>
-    <p class="tagline" data-editable data-file="home" data-path="hero.tagline">{home.hero.tagline}</p>
-    <div class="divider"></div>
-    <p class="intro" data-editable data-file="home" data-path="hero.intro">
-      {home.hero.intro}
-    </p>
-  </section>
+    <main>
+      <div class="kr-catalog" data-kc-root>
+        <header class="kc-intro">
+          <p class="kc-eyebrow">AVICHAI TUCHMAN / DoGBeaT</p>
+          <h1 id="kc-title">Music.</h1>
+        </header>
 
-  <section class="featured">
-    <h2 data-editable data-file="home" data-path="selectedWork.sectionTitle">{home.selectedWork.sectionTitle}</h2>
-    <ul class="work-list">
-      {home.selectedWork.items.map((item, i) => (
-        <li>
-          <span class="work-title" data-editable data-file="home" data-path={`selectedWork.items[${i}].title`}>{item.title}</span>
-          <span class="work-desc" data-editable data-file="home" data-path={`selectedWork.items[${i}].description`}>{item.description}</span>
-        </li>
-      ))}
-    </ul>
-    <a href={home.selectedWork.seeAllLink} class="see-all">{home.selectedWork.seeAllText} &rarr;</a>
-  </section>
+        <details class="kc-search-panel">
+          <summary>Search the catalogue <span aria-hidden="true">+</span></summary>
+          <form class="kc-search" data-kc-controls hidden role="search">
+            <label for="kc-search">Find a record
+              <span class="kc-search-input-wrap"><input autocomplete="off" data-kc-search-input dir="auto" id="kc-search" placeholder="Artist, song or album…" type="search" /></span>
+            </label>
+            <label for="kc-artist">Artist
+              <select data-kc-artist-select id="kc-artist">
+                <option value="">All artists</option>
+                {artists.map((artist) => <option>{artist}</option>)}
+              </select>
+            </label>
+            <button type="reset">Clear filters</button>
+          </form>
+          <p class="kc-results" data-kc-status role="status">30 releases</p>
+        </details>
+        <noscript><p>All releases are listed below. Enable JavaScript for filtering and in-page playback.</p></noscript>
 
-  <section class="philosophy">
-    <blockquote data-editable data-file="home" data-path="philosophyQuote">
-      "{home.philosophyQuote}"
-    </blockquote>
-  </section>
-</Base>
+        <CatalogProjects />
+        <CatalogWork />
 
-<style>
-  .hero {
-    padding: 2rem 0 3rem;
-  }
+        <footer class="kc-archive-foot">
+          <p>Selected catalogue · Avichai Tuchman / DoGBeaT</p>
+          <p>YouTube and Spotify players open inside this page whenever an embeddable source is available.</p>
+        </footer>
+      </div>
+    </main>
 
-  .hero h1 {
-    font-size: 2.4rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .tagline {
-    color: var(--accent);
-    font-size: 0.9rem;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-  }
-
-  .divider {
-    width: 60px;
-    height: 1px;
-    background: var(--border);
-    margin: 2rem 0;
-  }
-
-  .intro {
-    font-size: 1rem;
-    max-width: 520px;
-    line-height: 1.8;
-  }
-
-  .featured {
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-  }
-
-  .featured h2 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.5rem;
-    color: var(--accent);
-  }
-
-  .work-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .work-list li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding-bottom: 1.2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .work-list li:last-child {
-    border-bottom: none;
-  }
-
-  .work-title {
-    font-size: 1.05rem;
-  }
-
-  .work-desc {
-    font-size: 0.8rem;
-    color: var(--accent);
-    letter-spacing: 0.03em;
-  }
-
-  .see-all {
-    display: inline-block;
-    margin-top: 1.5rem;
-    font-size: 0.8rem;
-    text-transform: lowercase;
-    letter-spacing: 0.05em;
-  }
-
-  .philosophy {
-    padding: 3rem 0;
-    border-top: 1px solid var(--border);
-  }
-
-  blockquote {
-    font-size: 1.1rem;
-    font-style: normal;
-    color: var(--accent);
-    padding-left: 1.5rem;
-    border-left: 2px solid var(--border);
-    line-height: 1.8;
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 1.6rem;
-    }
-  }
-</style>
+    <footer class="preview-footer">KESEM RECORDS · TEL AVIV</footer>
+    <script is:inline src="/catalog.js"></script>
+  </body>
+</html>
