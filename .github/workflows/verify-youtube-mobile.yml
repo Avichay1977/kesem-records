@@ -1,0 +1,75 @@
+name: Kesem real YouTube mobile verification
+on:
+  push:
+    branches:
+      - verify/youtube-mobile-20260907
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Record source and install locked site dependencies
+        run: |
+          set -euo pipefail
+          mkdir -p verification-results
+          git rev-parse HEAD > verification-results/commit.txt
+          node --version > verification-results/node-version.txt
+          npm ci
+      - name: Build existing website without changing the source
+        run: |
+          set -euo pipefail
+          npm run build 2>&1 | tee verification-results/build.txt
+      - name: Install browser verification dependencies
+        run: |
+          python -m pip install playwright==1.62.0
+          python -m playwright install --with-deps chromium
+      - name: Verify real media on built source and both existing public URLs
+        run: |
+          set -euo pipefail
+          python -m http.server 4173 --bind 127.0.0.1 --directory dist > verification-results/server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          sleep 2
+          python tests/verify_youtube_mobile.py
+      - name: Record result summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report = Path('verification-results/report.json')
+          lines = ['# Kesem verification', '', 'No deployment performed. No media mocks. Mobile emulation, not a physical phone.', '']
+          if report.exists():
+              data = json.loads(report.read_text())
+              for name, site in data.get('sites', {}).items():
+                  n = sum(v.get('status') == 'video_playback_verified' for v in site.get('videos', []))
+                  lines.append(f"- {name}: {site.get('status')} | {n}/{site.get('youtube_source_count', 0)} video sources verified")
+          else:
+              lines.append('Verification did not complete. Review the build/setup logs. No playback success can be claimed.')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write('\n'.join(lines) + '\n')
+          PY
+      - name: Save evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: kesem-youtube-mobile-evidence
+          path: verification-results/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Save built static website for review only
+        if: success()
+        uses: actions/upload-artifact@v5
+        with:
+          name: kesem-built-site-review-only
+          path: dist/
+          retention-days: 7
+          if-no-files-found: error
