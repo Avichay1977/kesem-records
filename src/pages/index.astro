@@ -1,6 +1,7 @@
 ---
 import CatalogProjects from '../components/CatalogProjects.astro';
 import CatalogWork from '../components/CatalogWork.astro';
+import settings from '../data/settings.json';
 
 const artists = [
   'Avichai Tuchman',
@@ -23,6 +24,14 @@ const artists = [
   'Shlomi Shaban',
   'Shuli Rand'
 ];
+const studioIdentity = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': settings.brand.studioUrl + '#organization', name: 'Kesem Records', url: settings.brand.studioUrl, founder: { '@id': settings.brand.personId } },
+    { '@type': 'Person', '@id': settings.brand.personId, name: settings.brand.personName, alternateName: settings.brand.alternateNames, url: settings.brand.artistUrl },
+    { '@type': 'WebPage', '@id': settings.brand.studioUrl + '#webpage', url: settings.brand.studioUrl, name: 'Kesem Records — DoGBeaT studio and catalogue' }
+  ]
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -33,7 +42,19 @@ const artists = [
     <meta name="robots" content="index,follow" />
     <meta name="description" content="Selected work by Avichai Tuchman / DoGBeaT — production, performance, original music and remixes." />
     <title>Kesem Records — Avichai Tuchman / DoGBeaT</title>
+    <link rel="canonical" href="https://kesem-records.netlify.app/" />
+    <meta property="og:title" content="Kesem Records — DoGBeaT studio and catalogue" />
+    <meta property="og:description" content="Selected production work and music catalogue by Avichai Tuchman (DoGBeaT)." />
+    <script type="application/ld+json" set:html={JSON.stringify(studioIdentity)} />
+    <style is:inline>
+      .kc-brand-bridge{margin:0.85rem 0 1.6rem;font-size:0.95rem;line-height:1.7;max-width:800px}
+      .kc-brand-bridge-he{direction:rtl;text-align:right;font-family:Arial,sans-serif;max-width:800px;font-size:0.9rem;line-height:1.6;margin:0.5rem 0 1.6rem}
+      .kc-brand-links{display:flex;flex-wrap:wrap;gap:0.7rem;margin:1.25rem 0 2rem}
+      .kc-brand-links a{display:inline-block;padding:0.7rem 0.9rem;border:1px solid currentColor;font-size:0.84rem;line-height:1.45}
+      .kc-brand-links a:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+    </style>
     <link rel="stylesheet" href="/catalog.css" />
+    <style is:inline>@media(max-width:700px){.preview-nav .preview-links{flex-wrap:wrap;gap:0.4rem 0.9rem}.preview-nav .preview-links a:last-child{display:inline-flex}}</style>
   </head>
   <body>
     <header class="preview-nav">
@@ -43,6 +64,7 @@ const artists = [
           <a href="#kc-projects">Projects</a>
           <a href="#kc-work">Production &amp; Performance</a>
           <a href="/about/">About</a>
+          <a href="https://dogbeat.netlify.app/" rel="noopener">DoGBeaT</a>
         </nav>
       </div>
     </header>
@@ -52,6 +74,13 @@ const artists = [
         <header class="kc-intro">
           <p class="kc-eyebrow">AVICHAI TUCHMAN / DoGBeaT</p>
           <h1 id="kc-title">Music.</h1>
+          <p class="kc-brand-bridge">Kesem Records is the studio and selected catalogue of <a href="https://dogbeat.netlify.app/">DoGBeaT</a> — Avichai Tuchman (also known as Avi Tuchman and Avichay Tuchman). Music production, composition and mixing, alongside selected music for screen.</p>
+          <p class="kc-brand-bridge-he" lang="he" dir="rtl">קסם רקורדס — האולפן והקטלוג הנבחר של אביחי טוכמן (אבי טוכמן), היוצר והמפיק DoGBeaT.</p>
+          <div class="kc-brand-links" aria-label="DoGBeaT services">
+            <a href="https://dogbeat.netlify.app/music-for-film-tv-advertising/">Music for film, TV &amp; ads</a>
+            <a href="https://dogbeat.netlify.app/music-production/">Production &amp; mixing</a>
+            <a href="https://dogbeat.netlify.app/credits/">Verified credits</a>
+          </div>
         </header>
 
         <details class="kc-search-panel">
