@@ -1,0 +1,13 @@
+/ https://dogbeat.netlify.app/studio/ 301!
+/about/ https://dogbeat.netlify.app/studio/about/ 301!
+/work/ https://dogbeat.netlify.app/studio/work/ 301!
+/music/ https://dogbeat.netlify.app/studio/music/ 301!
+/contact/ https://dogbeat.netlify.app/studio/contact/ 301!
+/admin/ https://dogbeat.netlify.app/studio/ 301!
+/robots.txt https://dogbeat.netlify.app/robots.txt 301!
+/sitemap.xml https://dogbeat.netlify.app/sitemap.xml 301!
+/catalog.css https://dogbeat.netlify.app/studio/catalog.css 301!
+/catalog.js https://dogbeat.netlify.app/studio/catalog.js 301!
+/favicon.ico https://dogbeat.netlify.app/studio/favicon.ico 301!
+/favicon.svg https://dogbeat.netlify.app/studio/favicon.svg 301!
+/* https://dogbeat.netlify.app/studio/:splat 301!
