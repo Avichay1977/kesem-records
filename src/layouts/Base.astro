@@ -7,6 +7,22 @@ interface Props {
 }
 
 const { title = settings.siteTitle, description = settings.siteDescription } = Astro.props;
+const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const canonical = new URL(canonicalPath, settings.brand.studioUrl).toString();
+const studioIdentity = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': settings.brand.studioUrl + '#organization',
+      name: 'Kesem Records', url: settings.brand.studioUrl,
+      founder: { '@id': settings.brand.personId } },
+    { '@type': 'Person', '@id': settings.brand.personId,
+      name: settings.brand.personName, alternateName: settings.brand.alternateNames,
+      url: settings.brand.artistUrl,
+      sameAs: ['https://www.youtube.com/@DoGBeaT77', 'https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4'] },
+    { '@type': 'WebPage', '@id': canonical + '#webpage', url: canonical, name: title,
+      about: [{ '@id': settings.brand.personId }, { '@id': settings.brand.studioUrl + '#organization' }] }
+  ]
+};
 ---
 
 <!doctype html>
@@ -15,6 +31,11 @@ const { title = settings.siteTitle, description = settings.siteDescription } = A
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <script type="application/ld+json" set:html={JSON.stringify(studioIdentity)} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
@@ -36,6 +57,7 @@ const { title = settings.siteTitle, description = settings.siteDescription } = A
 
     <footer class="footer">
       <p data-editable data-file="settings" data-path="footer.text">&copy; {new Date().getFullYear()} {settings.footer.text}</p>
+      <p><a href="https://dogbeat.netlify.app/" rel="noopener">DoGBeaT — producer &amp; composer</a> · <a href="https://dogbeat.netlify.app/credits/" rel="noopener">Source-linked credits</a></p>
     </footer>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
@@ -102,7 +124,9 @@ const { title = settings.siteTitle, description = settings.siteDescription } = A
 
   .nav-links {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    max-width: 100%;
   }
 
   .nav-links a {
