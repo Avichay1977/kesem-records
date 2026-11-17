@@ -69,3 +69,4 @@ body:has(.kr-catalog) main{max-width:1240px;padding:40px 28px 72px}
 .kr-catalog .kc-embed:has(.kc-spotify-frame){background:transparent}
 .kr-catalog .kc-player-meta [data-kc-direct]{display:none}
 .kr-catalog .kc-player-help:not([open]){display:none}
+@media (max-width:400px){.kr-catalog h1{font-size:10.5vw}}
