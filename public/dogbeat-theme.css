@@ -1,0 +1,19 @@
+/* One DoGBeaT visual system — original Kesem catalogue mechanics kept intact. */
+:root{--fg:#161412!important;--bg:#F4EFE3!important;--accent:#554c40!important;--border:#161412!important}
+html{background:#F4EFE3}
+body{background:#F4EFE3!important;color:#161412!important;font-family:'Special Elite','Courier New',monospace!important}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible{outline:3px solid #0F5FA6!important;outline-offset:4px}
+.preview-nav,.header{border-bottom:3px solid #161412!important;background:#F4EFE3}
+.preview-brand .brand-text,.header .logo{font-family:'Press Start 2P',monospace;font-size:10px!important;line-height:1.8}
+.nav-links,.preview-links{flex-wrap:wrap}
+.kr-catalog{--kc-ink:#161412;--kc-muted:#554c40;--kc-line:#161412;--kc-bg:#F4EFE3;--kc-paper:#F4EFE3;font-family:'Special Elite','Courier New',monospace}
+.kr-catalog .kc-card{background:#fff}
+.kr-catalog h1,.kr-catalog h2,.kr-catalog h3{color:#161412}
+.kc-brand-links a{background:#FFC400;color:#161412!important;border:2px solid #161412!important;box-shadow:4px 4px 0 #161412;padding:.7rem .8rem}
+.kc-brand-bridge{line-height:1.8}
+.kc-brand-bridge-he{font-family:Arial,sans-serif}
+.brand-unified{padding:.9rem 1.2rem;border-bottom:3px solid #161412;background:#FFC400;display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+.brand-unified a{font-family:'Special Elite','Courier New',monospace!important;font-weight:bold;color:#161412;text-decoration:underline;font-size:14px}
+.brand-unified .wordmark{font-family:'Press Start 2P',monospace!important;font-size:12px;text-decoration:none;margin-right:auto}
+@media(max-width:640px){.brand-unified{padding:.85rem;gap:.65rem}.brand-unified a{font-size:12px}.brand-unified .wordmark{width:100%;margin-right:0}.preview-nav .preview-links{flex-wrap:wrap;gap:.65rem}.preview-nav .preview-links a:last-child{display:inline-flex}h1,h2,h3{overflow-wrap:anywhere}}

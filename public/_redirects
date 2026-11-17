@@ -1,13 +1,24 @@
-/ https://dogbeat.netlify.app/studio/ 301!
-/about/ https://dogbeat.netlify.app/studio/about/ 301!
-/work/ https://dogbeat.netlify.app/studio/work/ 301!
-/music/ https://dogbeat.netlify.app/studio/music/ 301!
-/contact/ https://dogbeat.netlify.app/studio/contact/ 301!
-/admin/ https://dogbeat.netlify.app/studio/ 301!
-/robots.txt https://dogbeat.netlify.app/robots.txt 301!
-/sitemap.xml https://dogbeat.netlify.app/sitemap.xml 301!
-/catalog.css https://dogbeat.netlify.app/studio/catalog.css 301!
-/catalog.js https://dogbeat.netlify.app/studio/catalog.js 301!
-/favicon.ico https://dogbeat.netlify.app/studio/favicon.ico 301!
-/favicon.svg https://dogbeat.netlify.app/studio/favicon.svg 301!
-/* https://dogbeat.netlify.app/studio/:splat 301!
+# Kesem Records is the main site. DoGBeaT lives inside it at /dogbeat/.
+# Rules without "!" only apply when no real page exists at that address.
+
+# Old Kesem addresses that were served under /studio/ on the DoGBeaT site
+/studio                              /                                         301
+/studio/*                            /:splat                                   301
+
+# DoGBeaT pages that used to live at the root of dogbeat.netlify.app
+/credits                             /dogbeat/credits/                         301
+/credits/*                           /dogbeat/credits/:splat                   301
+/music-production                    /dogbeat/music-production/                301
+/music-production/*                  /dogbeat/music-production/:splat          301
+/music-for-film-tv-advertising       /dogbeat/music-for-film-tv-advertising/   301
+/music-for-film-tv-advertising/*     /dogbeat/music-for-film-tv-advertising/:splat 301
+/ai-technology                       /dogbeat/ai-technology/                   301
+/ai-technology/*                     /dogbeat/ai-technology/:splat             301
+/assets/*                            /dogbeat/assets/:splat                    301
+
+# /music/ is the Kesem music page; the DoGBeaT track pages moved to /dogbeat/music/
+/music/*                             /dogbeat/music/:splat                     301
+
+# The old content editor edits files that are no longer shown on the site, so it stays closed
+/admin                               /                                         302!
+/admin/*                             /                                         302!

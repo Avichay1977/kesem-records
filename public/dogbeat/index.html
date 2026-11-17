@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoGBeaT | Avichai Tuchman — Music Producer &amp; Composer</title>
+<meta name="description" content="Official website of Avichai (Avi) Tuchman, known as DoGBeaT. Explore music production, original tracks, remixes, sync licensing routes and verified credits.">
+<meta name="google-site-verification" content="hFORNe7TeUOYu27Gw_kXOmLqD9dYgu1c7EIitFOoKJM" />
+
+<meta property="og:title" content="DoGBeaT / Avi Tuchman">
+<meta property="og:description" content="Original music, remixes, bass performances and music production by DoGBeaT. Listen and browse selected recordings and verified credits.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Kesem Records fonts: Special Elite (typewriter) + Press Start 2P (pixel) -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F4EFE3;
+    --ink:#161412;
+    --red:#E0301E;
+    --yellow:#FFC400;
+    --blue:#0F5FA6;
+    --white:#FFFFFF;
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-lg:9px 9px 0 var(--ink);
+    /* Kesem typography */
+    --display:'Press Start 2P', monospace;          /* the DoGBeaT wordmark */
+    --type:'Special Elite', 'Courier New', monospace;/* everything else */
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--paper);}
+
+  body{
+    font-family:var(--type);
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    overflow-x:hidden;
+    position:relative;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:.01em;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(22,20,18,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(22,20,18,.035) 1px, transparent 1px);
+    background-size:34px 34px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .deco{position:fixed;z-index:0;pointer-events:none;}
+  .deco-quarter{
+    top:-90px;right:-90px;width:300px;height:300px;
+    background:var(--blue);border-radius:0 0 0 100%;border:3px solid var(--ink);
+  }
+  .deco-tri{
+    bottom:-2px;left:-2px;width:0;height:0;
+    border-style:solid;border-width:0 0 220px 220px;
+    border-color:transparent transparent transparent var(--yellow);
+    filter:drop-shadow(3px -3px 0 var(--ink));opacity:.9;
+  }
+  .deco-circle{
+    bottom:60px;right:38px;width:90px;height:90px;border-radius:50%;
+    background:var(--red);border:3px solid var(--ink);
+  }
+  .deco-line{top:0;left:46%;width:3px;height:100vh;background:var(--ink);opacity:.12;}
+  @media (max-width:540px){
+    .deco-quarter{width:200px;height:200px;top:-70px;right:-70px;}
+    .deco-tri{border-width:0 0 150px 150px;}
+    .deco-circle{display:none;}
+    .deco-line{display:none;}
+  }
+
+  .page{position:relative;z-index:1;width:100%;max-width:460px;padding:48px 22px 40px;}
+
+  .card{
+    background:var(--white);border:3px solid var(--ink);box-shadow:var(--shadow-lg);
+    padding:30px 26px 28px;position:relative;overflow:hidden;
+    opacity:0;transform:translateY(16px);
+    animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .card-strip{display:flex;height:10px;margin:-30px -26px 24px;border-bottom:3px solid var(--ink);}
+  .card-strip span{flex:1;border-right:3px solid var(--ink);}
+  .card-strip span:last-child{border-right:none;}
+  .s-red{background:var(--red);}
+  .s-yellow{background:var(--yellow);flex:2 !important;}
+  .s-blue{background:var(--blue);}
+  .s-ink{background:var(--ink);}
+
+  .avatar{
+    width:104px;height:104px;border-radius:50%;
+    border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);
+    overflow:hidden;margin-bottom:22px;background:#ffffff;position:relative;
+  }
+  /* AVATAR = Kesem "K" mark (favicon style). Replace with <img src="profile.jpg" alt="DoGBeaT"> */
+  .avatar svg{width:100%;height:100%;display:block;}
+
+  .name{
+    font-family:var(--display);
+    font-size:clamp(22px, 6.5vw, 30px);
+    line-height:1.15;
+    text-transform:none;
+    word-break:break-word;
+  }
+  .name .dot{color:var(--red);}
+
+  .repline{
+    font-family:var(--type);
+    font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+    margin-top:11px;color:rgba(22,20,18,.55);
+  }
+  .role{
+    font-family:var(--type);
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    margin-top:7px;color:var(--ink);
+  }
+  .tagline{font-size:17px;margin-top:10px;max-width:32ch;line-height:1.5;}
+  .badge{
+    display:inline-block;margin-top:18px;background:var(--yellow);
+    border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);
+    font-family:var(--type);font-size:13px;letter-spacing:1px;text-transform:uppercase;
+    padding:6px 13px;
+  }
+
+  .links{margin-top:26px;display:flex;flex-direction:column;gap:16px;}
+
+  .link{
+    display:flex;align-items:center;gap:16px;
+    background:var(--white);border:3px solid var(--ink);box-shadow:var(--shadow);
+    padding:14px 16px;text-decoration:none;color:var(--ink);position:relative;
+    transition:transform .14s ease, box-shadow .14s ease;
+    opacity:0;transform:translateY(16px);
+    animation:rise .5s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .link:hover{transform:translate(-2px,-3px);box-shadow:var(--shadow-lg);}
+  .link:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink);}
+
+  .chip{
+    flex:0 0 50px;height:50px;border:2.5px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chip svg{width:26px;height:26px;}
+  .c-blue{background:var(--blue);}
+  .c-red{background:var(--red);}
+  .c-yellow{background:var(--yellow);}
+  .c-ink{background:var(--ink);}
+  .c-split{background:linear-gradient(135deg, var(--yellow) 0 50%, var(--blue) 50% 100%);}
+
+  .link-text{flex:1;min-width:0;}
+  .link-title{
+    font-family:var(--type);font-size:17px;line-height:1.1;
+    text-transform:uppercase;letter-spacing:.5px;
+  }
+  .link-sub{
+    font-family:var(--type);font-size:12.5px;letter-spacing:.3px;
+    text-transform:none;margin-top:3px;color:#5a554d;
+  }
+  .arrow{flex:0 0 auto;font-family:var(--type);font-size:22px;transition:transform .14s ease;}
+  .link:hover .arrow{transform:translate(3px,-3px);}
+
+  .foot{
+    margin-top:34px;text-align:center;font-family:var(--type);
+    font-size:13px;letter-spacing:.5px;color:#6b665e;line-height:1.9;
+    opacity:0;animation:rise .5s ease .8s forwards;
+  }
+  .foot strong{color:var(--ink);}
+
+  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  .link:nth-child(1){animation-delay:.14s;}
+  .link:nth-child(2){animation-delay:.20s;}
+  .link:nth-child(3){animation-delay:.26s;}
+  .link:nth-child(4){animation-delay:.32s;}
+  .link:nth-child(5){animation-delay:.38s;}
+  .link:nth-child(6){animation-delay:.44s;}
+  .link:nth-child(7){animation-delay:.50s;}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;opacity:1 !important;transform:none !important;}
+  }
+
+.music-evidence{margin-top:24px;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:20px 18px;line-height:1.55}.music-evidence h2{font-family:var(--type);font-size:21px;line-height:1.35;margin-bottom:12px}.music-evidence p{font-family:var(--type);font-size:15px;line-height:1.6;margin-top:12px}.music-evidence a{font-weight:700;text-decoration:underline;text-underline-offset:3px}@media(max-width:540px){.music-evidence h2{font-size:19px}.music-evidence p{font-size:15px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","@id":"https://kesem-records.netlify.app/dogbeat/#webpage","url":"https://kesem-records.netlify.app/dogbeat/","name":"DoGBeaT | Avichai Tuchman — Music Producer & Composer","inLanguage":["en","he"],"isPartOf":{"@id":"https://kesem-records.netlify.app/#website"},"mainEntity":{"@id":"https://kesem-records.netlify.app/dogbeat/#avi-tuchman"},"citation":["https://www.nli.org.il/he/items/NNL_MUSIC_AL990047639490205171/NLI","https://www.qobuz.com/us-en/album/long-time-coming-avichai-tuchman-aka-dogbeat-remix-balkan-beat-box/maebcpfi1v83b","https://lemurcreatives.com/magazine/noadog/"],"breadcrumb":{"@id":"https://kesem-records.netlify.app/dogbeat/#breadcrumb"}}]}</script>
+<link rel="canonical" href="https://kesem-records.netlify.app/dogbeat/"><meta property="og:url" content="https://kesem-records.netlify.app/dogbeat/"><style>.identity-note{font-size:14px;line-height:1.6;margin-top:16px}.identity-note p{margin-top:10px}.identity-note [lang="he"]{font-family:Arial,sans-serif}.link-title,.link-sub{display:block}.link:focus-visible{outline:3px solid var(--blue);outline-offset:6px}</style><link rel="alternate" type="text/plain" href="/llms.txt" title="DoGBeaT public source guide"><meta property="og:image" content="https://kesem-records.netlify.app/dogbeat/assets/dogbeat-profile.png"><meta property="og:image:alt" content="DoGBeaT — Avichai Tuchman portrait"><meta name="twitter:image" content="https://kesem-records.netlify.app/dogbeat/assets/dogbeat-profile.png"><meta name="twitter:card" content="summary"><meta property="og:site_name" content="Kesem Records"><style>.he-summary{direction:rtl;text-align:right;font-family:Arial,"Noto Sans Hebrew","Segoe UI",sans-serif;font-size:.95rem;line-height:1.65;margin:.75rem 0 1.25rem;max-width:760px;letter-spacing:0;text-transform:none}.kc-he-title{direction:rtl;text-align:right;font-family:Arial,"Noto Sans Hebrew",sans-serif;font-size:.85rem;line-height:1.5;margin:.15rem 0 .35rem;letter-spacing:0;text-transform:none;opacity:.85}</style><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="he_IL"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kesem-records.netlify.app/#organization","name":"Kesem Records","alternateName":["קסם רקורדס","קסם רקורד"],"url":"https://kesem-records.netlify.app/","logo":"https://kesem-records.netlify.app/favicon.svg","description":"Kesem Records is the music production studio and selected music catalogue of Avichai Tuchman (DoGBeaT), based in Tel Aviv.","founder":{"@id":"https://kesem-records.netlify.app/dogbeat/#avi-tuchman"},"location":{"@type":"Place","name":"Tel Aviv, Israel"},"knowsAbout":["Music production","Mixing","Remixes","Original composition","Music for film, TV and advertising"]},{"@type":"Person","@id":"https://kesem-records.netlify.app/dogbeat/#avi-tuchman","name":"Avichai Tuchman","alternateName":["DoGBeaT","Avi Tuchman","Avichay Tuchman","אביחי טוכמן","אבי טוכמן","דוגביט"],"url":"https://kesem-records.netlify.app/dogbeat/","image":"https://kesem-records.netlify.app/dogbeat/assets/dogbeat-profile.png","description":"Avichai Tuchman, known as DoGBeaT, is a Tel Aviv music producer, composer, bassist and mixing engineer. He runs Kesem Records, his music production studio and catalogue.","jobTitle":["Music Producer","Composer","Mix Engineer","Bassist"],"hasOccupation":[{"@type":"Occupation","name":"Music producer"},{"@type":"Occupation","name":"Composer"},{"@type":"Occupation","name":"Mixing engineer"}],"knowsAbout":["Music production","Original scoring","Mix engineering","Remixing","AI-assisted music workflows","Audio plug-in prototyping","Digital signal processing"],"homeLocation":{"@type":"Place","name":"Tel Aviv, Israel"},"worksFor":{"@id":"https://kesem-records.netlify.app/#organization"},"memberOf":{"@type":"MusicGroup","name":"Oy Division"},"sameAs":["https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4","https://www.youtube.com/@DoGBeaT77","https://www.instagram.com/dogbeat77/","https://artlist.io/royalty-free-music/artist/dogbeat/1570","https://soundcloud.com/avi-tuchman"]},{"@type":"WebSite","@id":"https://kesem-records.netlify.app/#website","url":"https://kesem-records.netlify.app/","name":"Kesem Records","alternateName":["קסם רקורדס","Kesem Records — DoGBeaT"],"inLanguage":["en","he"],"publisher":{"@id":"https://kesem-records.netlify.app/#organization"},"about":[{"@id":"https://kesem-records.netlify.app/#organization"},{"@id":"https://kesem-records.netlify.app/dogbeat/#avi-tuchman"}]},{"@type":"BreadcrumbList","@id":"https://kesem-records.netlify.app/dogbeat/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Kesem Records","item":"https://kesem-records.netlify.app/"},{"@type":"ListItem","position":2,"name":"DoGBeaT","item":"https://kesem-records.netlify.app/dogbeat/"}]}]}</script></head>
+<body>
+
+  <div class="deco deco-line"></div>
+  <div class="deco deco-quarter"></div>
+  <div class="deco deco-tri"></div>
+  <div class="deco deco-circle"></div>
+
+  <main class="page">
+
+    <!-- ===== PROFILE CARD ===== -->
+    <section class="card">
+      <div class="card-strip">
+        <span class="s-red"></span>
+        <span class="s-yellow"></span>
+        <span class="s-blue"></span>
+        <span class="s-ink"></span>
+      </div>
+
+      <!-- AVATAR: Kesem "K" mark. To use your real photo: replace this <svg> with
+           <img src="profile.jpg" alt="DoGBeaT" style="width:100%;height:100%;object-fit:cover"> -->
+      <div class="avatar">
+        <img src="data:image/png;base64,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" alt="Kesem Records logo" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+
+      <h1 class="name">DoGBeaT<span class="dot">.</span></h1>
+      <p class="repline">DoGBeaT · Kesem Records studio</p><p class="he-summary" lang="he" dir="rtl">דוגביט (DoGBeaT) הוא השם האמנותי של אביחי טוכמן (אבי טוכמן) — מפיק מוזיקלי, מלחין, בסיסט ומהנדס מיקס מתל אביב. האולפן שלו: קסם רקורדס.</p>
+      <p class="role">Producer · Composer · Mix · AI-assisted music technology</p>
+      <p class="tagline">Custom music for brands &amp; film.</p>
+      <div class="identity-note"><p><strong>Avichai Tuchman</strong> — producer, composer and mixing engineer. Also credited as Avi Tuchman and Avichay Tuchman.</p></div>
+    </section>
+
+    <!-- ===== LINKS ===== -->
+    <section class="music-evidence" aria-labelledby="music-evidence-title"><h2 id="music-evidence-title">Music production, bass &amp; remixes</h2><p><strong>Official website:</strong> This is the official website of Avichai Tuchman (DoGBeaT) for music production, composition, bass performances, remixes and enquiries about original music or recording-specific licensing.</p><p>I am Avichai Tuchman, also known as DoGBeaT. I produce and compose music, mix recordings, and play electric bass and double bass.</p><p>My documented work includes music production on <a href="/dogbeat/credits/">Noam Rotem&#39;s <em>Barzel Ve&#39;avanim</em></a> and Reines Girls&#39; <em>Nishmor Al Hahaverim</em>, bass on <a href="/#release-baderech-ein-gev">Hemi Rudner&#39;s <em>Baderech Le-Ein Gev</em></a>, and my <a href="/dogbeat/music/remixes/">official Balkan Beat Box remix</a>.</p><p>I also perform double bass with Oy Division. <a href="/#release-oy-first-album">Hear selected recordings</a> or explore <a href="/dogbeat/music/">my original music</a>, <a href="/dogbeat/music-production/">production and mixing</a> and <a href="/">Kesem Records</a>.</p><p><strong>Independent credits:</strong> <a href="https://www.nli.org.il/he/items/NNL_MUSIC_AL990047639490205171/NLI" target="_blank" rel="noopener noreferrer">National Library of Israel — Noam Rotem production credit</a>; <a href="https://www.qobuz.com/us-en/album/long-time-coming-avichai-tuchman-aka-dogbeat-remix-balkan-beat-box/maebcpfi1v83b" target="_blank" rel="noopener noreferrer">Qobuz — Balkan Beat Box remix credit</a>; <a href="https://lemurcreatives.com/magazine/noadog/" target="_blank" rel="noopener noreferrer">Lemur Magazine — DoGBeaT and Noa Faran feature</a>. These sources document selected work; availability for licensing must be checked per recording.</p></section><nav class="links" aria-label="Explore DoGBeaT"><a class="link" href="/dogbeat/music/"><span class="chip c-split"><span style="font-family:var(--display);font-size:18px">♫</span></span><span class="link-text"><span class="link-title">Music</span><span class="link-sub">Listen to selected DoGBeaT tracks</span></span><span class="arrow">&#8594;</span></a>
+<a class="link" href="/dogbeat/music/remixes/"><span class="chip c-yellow"><span style="font-family:var(--display);font-size:15px">RMX</span></span><span class="link-text"><span class="link-title">Remixes</span><span class="link-sub">DoGBeaT remix catalogue</span></span><span class="arrow">&#8594;</span></a>
+<a class="link" href="/"><span class="chip c-yellow" aria-hidden="true">4</span><span class="link-text"><span class="link-title">Kesem Records — Studio</span><span class="link-sub">33 releases, music players &amp; collaborations</span></span><span class="arrow" aria-hidden="true">&#8594;</span></a>
+<a class="link" href="/dogbeat/music-production/"><span class="chip c-blue" aria-hidden="true">2</span><span class="link-text"><span class="link-title">Production &amp; mixing</span><span class="link-sub">Artist projects &amp; original composition</span></span><span class="arrow" aria-hidden="true">&#8594;</span></a>
+<a class="link" href="/dogbeat/music-for-film-tv-advertising/"><span class="chip c-yellow" aria-hidden="true">1</span><span class="link-text"><span class="link-title">Music for screen</span><span class="link-sub">Licensing &amp; custom music</span></span><span class="arrow" aria-hidden="true">&#8594;</span></a>
+<a class="link" href="/dogbeat/credits/"><span class="chip c-red" aria-hidden="true">3</span><span class="link-text"><span class="link-title">Credits &amp; selected work</span><span class="link-sub">Documented roles &amp; sources</span></span><span class="arrow" aria-hidden="true">&#8594;</span></a>
+<a class="link" href="/dogbeat/ai-technology/"><span class="chip c-blue" aria-hidden="true">5</span><span class="link-text"><span class="link-title">AI Technology</span><span class="link-sub">Music × AI and audio plug-in prototypes</span></span><span class="arrow" aria-hidden="true">&#8594;</span></a>
+<a class="link" href="https://www.youtube.com/@DoGBeaT77" target="_blank" rel="noopener">
+        <span class="chip c-red">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="2.5" y="5.5" width="19" height="13" rx="3.5" stroke="#fff" stroke-width="2.2"/>
+            <path d="M10 9.2l5 2.8-5 2.8z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">YouTube</span>
+          <span class="link-sub">Watch &amp; subscribe</span>
+        </span>
+        <span class="arrow">&#8599;</span>
+      </a>
+<a class="link" href="https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4" target="_blank" rel="noopener">
+        <span class="chip c-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round">
+            <path d="M4 9c5-2 11-1.5 16 1.5"/><path d="M5 14c4-1.4 9-1 13 1.2"/><path d="M6.5 18.5c3-1 6.5-.7 9 .8"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">Spotify</span>
+          <span class="link-sub">Stream the catalogue</span>
+        </span>
+        <span class="arrow">&#8599;</span>
+      </a>
+<a class="link" href="https://artlist.io/royalty-free-music/artist/dogbeat/1570" target="_blank" rel="noopener">
+        <span class="chip c-yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#161412" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9h18M3 15h18M8 5v14M16 5v14"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">Artlist</span>
+          <span class="link-sub">License &amp; sync</span>
+        </span>
+        <span class="arrow">&#8599;</span>
+      </a>
+<a class="link" href="https://wa.me/972528801608" target="_blank" rel="noopener">
+        <span class="chip c-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M21 11.5a8 8 0 0 1-11.5 7.2L4 20l1.4-5.2A8 8 0 1 1 21 11.5z"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">WhatsApp</span>
+          <span class="link-sub">052-880-1608</span>
+        </span>
+        <span class="arrow">&#8599;</span>
+      </a>
+<a class="link" href="mailto:tuchmanavi@gmail.com?subject=Custom%20music%20inquiry">
+        <span class="chip c-yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#161412" stroke-width="2.2" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">Email</span>
+          <span class="link-sub">tuchmanavi@gmail.com</span>
+        </span>
+        <span class="arrow">&#8599;</span>
+      </a></nav>
+
+    <footer class="foot">
+      <strong>Avi Tuchman</strong> — DoGBeaT<br>
+      Tel Aviv · Producer &amp; Composer
+    </footer>
+
+  </main>
+</body>
+</html>

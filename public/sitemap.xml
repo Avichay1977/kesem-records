@@ -1,8 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kesem-records.netlify.app/</loc></url>
-  <url><loc>https://kesem-records.netlify.app/music/</loc></url>
-  <url><loc>https://kesem-records.netlify.app/about/</loc></url>
-  <url><loc>https://kesem-records.netlify.app/work/</loc></url>
-  <url><loc>https://kesem-records.netlify.app/contact/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://kesem-records.netlify.app/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/about/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/contact/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/music/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/work/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/ai-technology/</loc>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/ai-technology/freud-delay/</loc>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/ai-technology/terror-delay/</loc>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/credits/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music-for-film-tv-advertising/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music-production/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/bulldozer/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/cNpgPLwSV10/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Bulldozer — DoGBeaT</video:title>
+      <video:description>A heavy, forward-moving DoGBeaT cue designed for edits that need momentum, impact and clean visual cuts.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/cNpgPLwSV10</video:player_loc>
+      <video:publication_date>2022-11-28T02:07:37-08:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/crime-scene/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WWGpMjmSahc/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Crime Scene — DoGBeaT</video:title>
+      <video:description>A groovy DoGBeaT track with a cinematic edge, suited to story-led edits, brands and character-driven scenes.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/WWGpMjmSahc</video:player_loc>
+      <video:publication_date>2022-01-20T02:04:03-08:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/fast-as-you-can/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/NUjIjgrbFzY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Fast as You Can — DoGBeaT</video:title>
+      <video:description>A fast, kinetic DoGBeaT track built for motion, sports, road trips, product reveals and energetic edits.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/NUjIjgrbFzY</video:player_loc>
+      <video:publication_date>2023-03-01T02:02:23-08:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/i-dont-want-it-dogbeat-remix/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/milk-steak/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/6Q1_mgkoSYs/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Milk Steak — DoGBeaT</video:title>
+      <video:description>A groove-led DoGBeaT track with space for voice-over, explainers, branded content and commercial edits.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/6Q1_mgkoSYs</video:player_loc>
+      <video:publication_date>2023-10-02T03:03:55-07:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/out-of-body-dogbeat-remix/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/remixes/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/thrill-of-the-full/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/bG1kf5QSvJM/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Thrill of the Full — DoGBeaT</video:title>
+      <video:description>An energetic DoGBeaT instrumental for movement, skate, urban footage and fast visual storytelling.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/bG1kf5QSvJM</video:player_loc>
+      <video:publication_date>2022-11-28T02:09:07-08:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://kesem-records.netlify.app/dogbeat/music/what-you-gonna-do-dogbeat-remix/</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
 </urlset>

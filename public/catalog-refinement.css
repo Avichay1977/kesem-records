@@ -1,0 +1,71 @@
+/* Catalogue readability refinement. Keep the original DoGBeaT palette and headings. */
+.kr-catalog{font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;--kc-paper:#eee9de}
+body:has(.kr-catalog) main{max-width:1240px;padding:40px 28px 72px}
+.kr-catalog h1,.kr-catalog h2,.kr-catalog h3{font-family:'Special Elite','Courier New',monospace;letter-spacing:-.025em}
+.kr-catalog h1{font-size:clamp(42px,6vw,66px);line-height:1.14}
+.kr-catalog h2{font-size:clamp(28px,3vw,38px);line-height:1.2}
+.kr-catalog .kc-eyebrow,.kr-catalog .kc-section-index{font:700 13px/1.5 Arial,sans-serif;letter-spacing:.12em}
+.kr-catalog .kc-brand-bridge{font:17px/1.7 Arial,sans-serif;max-width:66ch}
+.kr-catalog .kc-brand-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.kr-catalog .kc-brand-links a{font:700 15px/1.4 Arial,sans-serif;display:inline-flex;align-items:center;min-height:44px}
+.kr-catalog .kc-search-panel{margin-top:28px;padding:14px 0 20px}
+.kr-catalog .kc-search-panel>summary{font:700 16px/1.5 Arial,sans-serif}
+.kr-catalog .kc-search label{font:700 14px/1.5 Arial,sans-serif}
+.kr-catalog .kc-search input,.kr-catalog .kc-search select{font-size:16px;min-height:46px;background:#fff;border:1px solid #161412;padding:10px 12px}
+.kr-catalog .kc-search button{font-size:15px;min-height:46px}
+.kr-catalog .kc-results,.kr-catalog .kc-section-meta{font:14px/1.5 Arial,sans-serif}
+.kr-catalog .kc-section{margin-top:44px}
+.kr-catalog .kc-section-head>p:last-child{font-size:16px;line-height:1.6}
+.kr-catalog .kc-filters{gap:10px;margin-top:20px}
+.kr-catalog .kc-filters button{font:700 14px/1.4 Arial,sans-serif;min-height:44px;padding:10px 16px;border:2px solid #161412}
+.kr-catalog .kc-filters button[aria-pressed=true]{background:#ffc400;color:#161412}
+.kr-catalog .kc-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+.kr-catalog .kc-card{padding:0;background:#fff;border:2px solid #161412;box-shadow:4px 4px 0 #161412;overflow:visible}
+.kr-catalog .kc-media-block{min-width:0}
+.kr-catalog .kc-player-shell{aspect-ratio:1;min-height:0;border:0;border-bottom:2px solid #161412;background:#f0ede5}
+.kr-catalog .kc-thumb{object-fit:contain;background:#eee9de;width:100%;height:100%}
+.kr-catalog .kc-play{padding:18px;gap:12px;justify-content:flex-end;text-decoration:none}
+.kr-catalog .kc-play-icon{width:52px;height:52px;border:2px solid #fff;box-shadow:0 2px 8px #0003}
+.kr-catalog .kc-play>span:last-child{font:700 15px/1.4 Arial,sans-serif;padding:10px 14px;background:#161412;color:#fff;max-width:100%;text-align:center}
+.kr-catalog .kc-player-meta{padding:12px 18px;margin:0;font:14px/1.5 Arial,sans-serif;gap:10px;align-items:center}
+.kr-catalog .kc-player-meta button,.kr-catalog .kc-player-meta [data-kc-direct]{font:700 14px/1.5 Arial,sans-serif;min-height:36px}
+.kr-catalog .kc-platform-links{padding:0 18px 12px;display:flex;gap:8px 16px;flex-wrap:wrap}
+.kr-catalog .kc-platform-links a{font:600 14px/1.5 Arial,sans-serif;text-decoration:underline;min-height:32px;display:inline-flex;align-items:center}
+.kr-catalog .kc-player-status{padding:0 18px;font:14px/1.6 Arial,sans-serif}
+.kr-catalog .kc-player-help{padding:0 18px;font:14px/1.6 Arial,sans-serif}
+.kr-catalog .kc-player-help summary{font-weight:700;min-height:42px}
+.kr-catalog .kc-card-copy{padding:18px 20px 22px;border-top:1px solid #e5dfd4}
+.kr-catalog .kc-card-meta{font:13px/1.5 Arial,sans-serif;gap:10px;margin-bottom:10px!important;flex-wrap:wrap}
+.kr-catalog .kc-artist{font:700 15px/1.5 Arial,sans-serif;margin-bottom:8px!important}
+.kr-catalog .kc-card h3{font-size:26px;line-height:1.22;letter-spacing:-.025em;overflow-wrap:break-word}
+.kr-catalog .kc-credit{font:16px/1.6 Arial,sans-serif;margin-top:14px!important}
+.kr-catalog .kc-role{font:13px/1.6 Arial,sans-serif;margin-top:8px!important}
+.kr-catalog .kc-details{margin-top:18px}
+.kr-catalog .kc-details summary{font:700 14px/1.5 Arial,sans-serif;min-height:48px}
+.kr-catalog .kc-tracks li{font:14px/1.6 Arial,sans-serif;min-height:48px}
+.kr-catalog .kc-track-number{font:12px/1.5 Arial,sans-serif}
+.kr-catalog .kc-note{font:14px/1.65 Arial,sans-serif}
+.kr-catalog .kc-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(240px,340px) minmax(0,1fr);gap:0;padding:0}
+.kr-catalog .kc-featured-banner{grid-column:1/-1;background:#ffc400;border-bottom:2px solid #161412;padding:14px 20px;font:700 14px/1.5 Arial,sans-serif}
+.kr-catalog .kc-featured .kc-card-copy{padding:26px 30px;border:0}
+.kr-catalog .kc-featured h3{font-size:42px}
+.kr-catalog .kc-featured .kc-player-shell{min-height:0}
+.kr-catalog .kc-featured .kc-artist{font-size:18px}
+.kr-catalog .kc-featured .kc-credit{font-size:16px}
+.kr-catalog .kc-player-shell:has(.kc-spotify-frame){aspect-ratio:auto;height:352px;min-height:352px}
+.kr-catalog .kc-player-shell:has(.kc-youtube-frame){aspect-ratio:16/9;min-height:220px}
+.kr-catalog .kc-embed iframe{min-width:200px;min-height:200px}
+.kr-catalog .kc-alternates{padding:0 18px 12px;gap:12px}
+.kr-catalog .kc-alt,.kr-catalog .kc-retry{font:14px/1.5 Arial,sans-serif!important;min-height:44px}
+.kr-catalog .kc-archive-foot{font:14px/1.7 Arial,sans-serif}
+.preview-links{font-size:14px;gap:24px}
+.preview-caption,.preview-footer{font-size:13px}
+@media(max-width:1020px){.kr-catalog .kc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media(max-width:650px){body:has(.kr-catalog) main{padding:28px 18px 50px}.kr-catalog .kc-grid,.kr-catalog .kc-featured{grid-template-columns:minmax(0,1fr)}.kr-catalog .kc-featured .kc-card-copy{padding:22px}.kr-catalog .kc-featured h3{font-size:34px}.kr-catalog .kc-featured .kc-player-shell{max-height:350px;aspect-ratio:1}.kr-catalog .kc-card h3{font-size:25px}.kr-catalog .kc-filters button{font-size:14px;padding:10px 12px}.kr-catalog .kc-player-shell{max-height:380px}.kr-catalog .kc-player-shell:has(.kc-spotify-frame){max-height:none}.kr-catalog .kc-brand-links a{font-size:14px}}
+
+/* Match the native compact Spotify album widget; the track list remains scrollable. */
+.kr-catalog .kc-player-shell:has(.kc-spotify-frame){height:154px;min-height:154px;aspect-ratio:auto;background:transparent}
+.kr-catalog .kc-player-shell .kc-spotify-frame{min-height:152px;height:152px}
+.kr-catalog .kc-embed:has(.kc-spotify-frame){background:transparent}
+.kr-catalog .kc-player-meta [data-kc-direct]{display:none}
+.kr-catalog .kc-player-help:not([open]){display:none}

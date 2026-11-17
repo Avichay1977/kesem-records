@@ -1,0 +1,11 @@
+# Upload this file as the ONLY file of the dogbeat.netlify.app site (Netlify > Deploys > drag-and-drop
+# a folder that contains just this _redirects file), AFTER the Kesem Records site is live.
+# Every old DoGBeaT address then moves permanently to the same page inside Kesem Records.
+
+/studio                https://kesem-records.netlify.app/                  301!
+/studio/*              https://kesem-records.netlify.app/:splat            301!
+/llms.txt              https://kesem-records.netlify.app/llms.txt          301!
+/robots.txt            https://kesem-records.netlify.app/robots.txt        301!
+/sitemap.xml           https://kesem-records.netlify.app/sitemap.xml       301!
+/                      https://kesem-records.netlify.app/dogbeat/          301!
+/*                     https://kesem-records.netlify.app/dogbeat/:splat    301!
