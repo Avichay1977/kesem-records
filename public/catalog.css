@@ -7,3 +7,5 @@
 .kr-catalog a.kc-play{text-decoration:none;color:inherit}
 .kr-catalog a.kc-play:focus-visible{outline:3px solid var(--kc-ink);outline-offset:-4px}
 .kr-catalog a.kc-play>span:last-child{font-size:12px}
+
+.skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;z-index:10000}.skip-link:focus{left:12px;top:12px;width:auto;height:auto;overflow:visible;padding:10px 14px;background:#fff;color:#000;outline:3px solid #000;border-radius:3px}
