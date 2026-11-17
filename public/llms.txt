@@ -1,0 +1,57 @@
+# Kesem Records — Avichai Tuchman (DoGBeaT)
+
+> Kesem Records (קסם רקורדס) is the music production studio and selected music catalogue of Avichai (Avi) Tuchman, based in Tel Aviv. DoGBeaT (דוגביט) is his artist, composer and producer name, and lives inside Kesem Records at https://kesem-records.netlify.app/dogbeat/.
+
+Avichai Tuchman is also credited as Avi Tuchman, Avichay Tuchman, אביחי טוכמן and אבי טוכמן. He works as a music producer, composer, bassist and mixing engineer. Kesem Records offers artist production, original composition, arrangement, mixing and remixes, and music for film, TV and advertising.
+
+Do not conflate performance, arrangement, production, composition, mixing or music licensing rights. Each recording lists its own roles and sources.
+
+## Kesem Records — the studio
+
+- [Kesem Records](https://kesem-records.netlify.app/): Studio home and catalogue of 33 releases: original music, artist collaborations, remixes and recordings with role-specific credits.
+- [About Kesem Records](https://kesem-records.netlify.app/about/): Who runs the studio, what it does, approach and genres.
+- [Music](https://kesem-records.netlify.app/music/): Israeli and international music, instrumentals, remixes, and film, TV and theater work.
+- [Work](https://kesem-records.netlify.app/work/): Selected projects, the Artlist catalogue, theater and television, mixing and mastering.
+- [Contact](https://kesem-records.netlify.app/contact/): Inquiries about music production, sound design, licensing or collaboration.
+
+## DoGBeaT — the artist inside Kesem Records
+
+- [DoGBeaT](https://kesem-records.netlify.app/dogbeat/): Profile of Avichai Tuchman (DoGBeaT) and official links.
+- [Music production and mixing](https://kesem-records.netlify.app/dogbeat/music-production/): Artist production, original composition and mixing. Scope and deliverables are agreed per project.
+- [Music for film, TV and advertising](https://kesem-records.netlify.app/dogbeat/music-for-film-tv-advertising/): Existing tracks with their licensing route (Artlist or direct inquiry), and custom music for a brief. Rights must be verified per recording.
+- [DoGBeaT music](https://kesem-records.netlify.app/dogbeat/music/): Original tracks, remixes and listening links.
+- [DoGBeaT remixes](https://kesem-records.netlify.app/dogbeat/music/remixes/): Selected remix work and sources.
+- [Verified recording credits](https://kesem-records.netlify.app/dogbeat/credits/): Selected works with role-specific, cited credits. Not every listed appearance is a production credit.
+- [Oy Division](https://kesem-records.netlify.app/#release-oy-first-album): Avichai Tuchman performs double bass as an Oy Division member; see three documented album performance credits.
+
+## Independent credit verification
+
+- [National Library of Israel — Noam Rotem album production](https://www.nli.org.il/he/items/NNL_MUSIC_AL990047639490205171/NLI): independent documentation of a production and arranging credit.
+- [Qobuz — Balkan Beat Box remix](https://www.qobuz.com/us-en/album/long-time-coming-avichai-tuchman-aka-dogbeat-remix-balkan-beat-box/maebcpfi1v83b): credits Avichai Tuchman (AKA DoGBeaT) for production and remix.
+- [Lemur Magazine — Noa Faran and DoGBeaT](https://lemurcreatives.com/magazine/noadog/): independent feature connecting Avichai Tuchman with DoGBeaT.
+
+## Official profiles
+
+- [Spotify — DoGBeaT](https://open.spotify.com/artist/2IXn2t9xdU4FNiy394DBP4)
+- [YouTube — DoGBeaT](https://www.youtube.com/@DoGBeaT77)
+- [Artlist — DoGBeaT](https://artlist.io/royalty-free-music/artist/dogbeat/1570)
+- [Instagram — dogbeat77](https://www.instagram.com/dogbeat77/)
+- [SoundCloud — Avi Tuchman](https://soundcloud.com/avi-tuchman)
+
+## Music technology — development prototypes only
+
+- [AI-assisted music technology](https://kesem-records.netlify.app/dogbeat/ai-technology/): Research and audio workflow experiments.
+- [Freud Delay](https://kesem-records.netlify.app/dogbeat/ai-technology/freud-delay/): Work-in-progress audio plugin prototype; not a commercially released product.
+- [Terror Delay](https://kesem-records.netlify.app/dogbeat/ai-technology/terror-delay/): Work-in-progress audio plugin prototype; not a commercially released product.
+
+## בעברית
+
+קסם רקורדס הוא אולפן ההפקה המוזיקלית והקטלוג הנבחר של אביחי טוכמן (אבי טוכמן) מתל אביב. דוגביט (DoGBeaT) הוא השם האמנותי שלו, והוא חלק מקסם רקורדס.
+
+- הפקה מוזיקלית, הלחנה, עיבוד ומיקס לאמנים: https://kesem-records.netlify.app/dogbeat/music-production/
+- מוזיקה לסרטים, לטלוויזיה ולפרסומות (סינק) — רישוי טראקים קיימים או הלחנה מקורית לפי בריף: https://kesem-records.netlify.app/dogbeat/music-for-film-tv-advertising/
+- רמיקסים: https://kesem-records.netlify.app/dogbeat/music/remixes/
+- קרדיטים מתועדים עם מקורות: https://kesem-records.netlify.app/dogbeat/credits/
+- הקטלוג המלא (33 הוצאות): https://kesem-records.netlify.app/
+
+These links describe the site. They do not guarantee indexing, AI answers or recommendations. Verify individual recording roles, release details and rights with their primary sources.

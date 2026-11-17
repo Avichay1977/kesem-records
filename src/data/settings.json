@@ -18,7 +18,7 @@
       },
       {
         "label": "DoGBeaT",
-        "url": "https://dogbeat.netlify.app/"
+        "url": "/dogbeat/"
       },
       {
         "label": "Contact",
@@ -62,16 +62,17 @@
     }
   ],
   "brand": {
-    "artistUrl": "https://dogbeat.netlify.app/",
+    "artistUrl": "https://kesem-records.netlify.app/dogbeat/",
     "studioUrl": "https://kesem-records.netlify.app/",
-    "personId": "https://dogbeat.netlify.app/#avi-tuchman",
+    "personId": "https://kesem-records.netlify.app/dogbeat/#avi-tuchman",
     "personName": "Avichai Tuchman",
     "alternateNames": [
       "DoGBeaT",
       "Avi Tuchman",
       "Avichay Tuchman",
       "אביחי טוכמן",
-      "אבי טוכמן"
+      "אבי טוכמן",
+      "דוגביט"
     ]
   }
 }
