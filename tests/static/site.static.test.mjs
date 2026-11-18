@@ -492,6 +492,15 @@ test('social image: home og:image is a site PNG whose size matches og:image:widt
   assertNoProblems('public/index.html social image', problems);
 });
 
+test('Open Graph: every sitemap page has og:title, og:type, og:url and og:image', () => {
+  const problems = [];
+  for (const page of sitemapPages()) {
+    const missing = ['og:title', 'og:type', 'og:url', 'og:image'].filter((key) => !metaContent(page.elements, key));
+    if (missing.length) problems.push(`${page.path}: missing ${missing.join(', ')}`);
+  }
+  assertNoProblems('required Open Graph tags', problems);
+});
+
 test('robots.txt declares the sitemap; llms.txt exists, is not empty, and every site URL in it resolves', () => {
   const problems = [];
   const sitemapUrl = `${SITE_ORIGIN}/sitemap.xml`;

@@ -23,6 +23,7 @@ GitHub Actions runs them in the **Site QA** workflow (`.github/workflows/site-qa
 - **iframe titles**: every embedded player has a `title`.
 - **Internal links**: no broken links between pages.
 - **Social image**: the share image used for link previews.
+- **Open Graph**: every page has `og:title`, `og:type`, `og:url` and `og:image`, the four properties link previews require.
 - **robots.txt and llms.txt**
 - **Security headers**: `public/_headers`.
 
