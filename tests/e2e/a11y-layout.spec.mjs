@@ -40,7 +40,7 @@ const MIN_WORD_LENGTH = 6;
 const ANIMATION_WAIT_MS = 5_000;
 
 /** @param {Viewport} viewport */
-const size = ({ width, height }) => `${width}×${height}`;
+const size = ({ width, height }) => `${width}x${height}`;
 
 /**
  * @type {import('@playwright/test').Fixtures<
@@ -88,7 +88,7 @@ for (const path of sitemapPaths()) {
         const widest = offenders.map((o) => `\n  ${o.element}: ${o.width}px wide, left ${o.left}px, right ${o.right}px`);
         expect(
           overflow,
-          `${path} is ${overflow}px wider than the ${viewport.width}px viewport. ` +
+          `Page ${path} is ${overflow}px wider than the ${viewport.width}px viewport. ` +
             `Widest offending elements:${widest.join('') || ' none found'}`,
         ).toBeLessThanOrEqual(0);
       });
@@ -111,7 +111,10 @@ for (const path of sitemapPaths()) {
           });
         },
       });
-      expect({ pageErrors, httpErrors }, `${path} while loading`).toEqual({ pageErrors: [], httpErrors: [] });
+      expect({ pageErrors, httpErrors }, `Uncaught errors or first-party HTTP errors while loading ${path}`).toEqual({
+        pageErrors: [],
+        httpErrors: [],
+      });
     });
   });
 }
