@@ -28,7 +28,8 @@ const LAYOUT_VIEWPORTS = [
 ];
 /** @type {Viewport} */
 const RUNTIME_VIEWPORT = { width: 1366, height: 900 };
-/** @type {Viewport[]} Home page H1 check; 360 px is the most common Android width. */
+// Home page H1 check; 360 px is the most common Android phone width.
+/** @type {Viewport[]} */
 const HEADING_VIEWPORTS = [
   { width: 320, height: 640 },
   { width: 360, height: 800 },
