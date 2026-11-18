@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
