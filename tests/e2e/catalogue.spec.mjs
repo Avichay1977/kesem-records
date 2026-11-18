@@ -116,6 +116,7 @@ test.describe('home catalogue', () => {
 
     const llms = readFileSync(LLMS_TXT, 'utf8');
     expect(llms, 'public/llms.txt states the catalogue size').toContain(`${total} releases`);
+    // The Hebrew section repeats the count as "<N> הוצאות" ("<N> releases").
     const claims = [...llms.matchAll(/(\d+)\s+(?:releases?|הוצאות)/g)].map((match) => Number(match[1]));
     expect(
       claims.filter((claim) => claim !== total),
