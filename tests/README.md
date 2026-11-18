@@ -33,10 +33,11 @@ GitHub Actions runs them in the **Site QA** workflow (`.github/workflows/site-qa
 - **Runtime**: no page errors.
 - **Home heading**: the home page H1 never breaks inside a word.
 - **Catalogue**: section counters, search, filters, players, the no-JavaScript fallback and the skip link.
+- **404 page**: an unknown URL returns HTTP 404 with the custom page, `noindex` and valid JSON-LD, plus the same accessibility, layout and runtime checks. It is the only page Astro builds (`src/pages/404.astro`), so these checks also guard Astro upgrades.
 
 ## Run locally
 
-From the repository root, with Node 22 (the CI version):
+From the repository root, with the Node version in `.nvmrc` (Node 22; Astro 7 needs 22.23.4 or later). CI reads the same file, and so does Netlify unless a `NODE_VERSION` variable is set in its settings.
 
 ```sh
 npm ci
@@ -66,5 +67,5 @@ A failing check usually means a real regression in the site. Fix the site, not t
   - `public/index.html`: each catalogue section's counter (`data-kc-section-count`, e.g. `15 releases`) and the total in the `data-kc-status` line (e.g. `33 releases`). Visitors without JavaScript see these texts as written; the catalogue script recounts them from the release cards.
   - `public/llms.txt`: the release count. It appears twice, in the English link list and in the Hebrew section.
 - **Third-party players are blocked.** The E2E tests abort requests to YouTube (`www.youtube.com`, `youtube.com`, `www.youtube-nocookie.com`) and Spotify (`open.spotify.com`), so no result depends on those services. Player tests check the site's own player behaviour, not the embedded media.
-- **New pages.** The E2E checks run on the pages listed in `public/sitemap.xml`. A page missing from the sitemap is not tested.
+- **New pages.** The E2E checks run on the pages listed in `public/sitemap.xml`. A page missing from the sitemap is not tested, except the 404 page, which has its own checks.
 - **Pinned versions.** `@playwright/test` (1.63.0) and `axe-core` (4.10.2) are pinned exactly. After a Playwright upgrade, run `npx playwright install chromium` again.
