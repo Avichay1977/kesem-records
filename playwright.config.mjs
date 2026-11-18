@@ -18,7 +18,10 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: `npm run preview -- --host 127.0.0.1 --port ${PORT}`,
+    // --ignore-lock keeps `astro preview` in the foreground, so Playwright owns the server.
+    // Without it, Astro 7 starts a detached background server when it detects an AI coding
+    // agent; that server outlives the test run and keeps the port busy.
+    command: `npm run preview -- --host 127.0.0.1 --port ${PORT} --ignore-lock`,
     url: `http://127.0.0.1:${PORT}/`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

@@ -101,10 +101,6 @@ const studioIdentity = {
   </body>
 </html>
 
-<style is:global>
-  @import '../styles/global.css';
-</style>
-
 <style>
   .header {
     padding: 2rem 1.5rem;
@@ -170,4 +166,14 @@ const studioIdentity = {
       padding: 2rem 1rem;
     }
   }
+</style>
+
+{/*
+  Keep the global styles after the scoped styles above. Astro 6+ emits styles in source
+  order, and the C64 theme overrides in global.css (for example
+  `:root[data-theme="commodore"] .nav-links a`) must come later to win over scoped rules
+  of equal specificity, as they did with Astro 5.
+*/}
+<style is:global>
+  @import '../styles/global.css';
 </style>

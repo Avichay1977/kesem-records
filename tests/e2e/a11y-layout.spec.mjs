@@ -1,7 +1,8 @@
 // @ts-check
 /**
- * Accessibility, layout and runtime checks for every page in public/sitemap.xml,
- * run against the production build (`astro preview` serves dist/).
+ * Accessibility, layout and runtime checks for every page in public/sitemap.xml, and for the
+ * 404 page (the one page Astro itself builds), run against the production build
+ * (`astro preview` serves dist/).
  *
  * Every check opens its page in a fresh browser context with its own viewport, aborts the
  * embedded YouTube and Spotify players, then waits for the load event, for web fonts and
@@ -131,6 +132,89 @@ test.describe('home page H1', () => {
       }
     });
   }
+});
+
+// The 404 page is the only page built by Astro (src/pages/404.astro); every other page is a
+// static file copied from public/. These checks guard it across Astro upgrades.
+const NOT_FOUND_PATH = '/qa-check-missing-page/';
+
+test.describe('404 page', () => {
+  test('an unknown URL returns HTTP 404 with the custom page, noindex and valid JSON-LD', async ({ openPage }) => {
+    /** @type {number | undefined} */
+    let status;
+    const page = await openPage(NOT_FOUND_PATH, RUNTIME_VIEWPORT, {
+      beforeGoto(page) {
+        page.on('response', (response) => {
+          if (new URL(response.url()).pathname === NOT_FOUND_PATH) status = response.status();
+        });
+      },
+    });
+    expect(status, `HTTP status of ${NOT_FOUND_PATH}`).toBe(404);
+    await expect(page).toHaveTitle('Not Found | Kesem Records');
+    await expect(page.locator('main h1')).toHaveText('404');
+    await expect(page.locator('main a[href="/"]')).toBeVisible();
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    expect(blocks.length, 'JSON-LD blocks on the 404 page').toBeGreaterThan(0);
+    for (const block of blocks) expect(() => JSON.parse(block), 'JSON-LD parses').not.toThrow();
+    // The page's own scoped styles reached the browser.
+    expect(await page.locator('.not-found').evaluate((el) => getComputedStyle(el).textAlign)).toBe('center');
+  });
+
+  // Astro 6+ emits styles in source order. global.css must stay after the layout's scoped
+  // styles, or `.nav-links a` (equal specificity) overrides the C64 theme's smaller size.
+  test('C64 theme: the theme size for nav links wins over the layout styles', async ({ openPage }) => {
+    const page = await openPage(NOT_FOUND_PATH, RUNTIME_VIEWPORT);
+    const { link, root } = await page.evaluate(() => {
+      document.documentElement.setAttribute('data-theme', 'commodore');
+      const navLink = /** @type {Element} */ (document.querySelector('.nav-links a'));
+      return {
+        link: parseFloat(getComputedStyle(navLink).fontSize),
+        root: parseFloat(getComputedStyle(document.documentElement).fontSize),
+      };
+    });
+    // global.css: :root[data-theme="commodore"] .nav-links a { font-size: 0.5rem; }
+    expect(link, 'nav link font size in the C64 theme, in px (0.5rem)').toBe(root * 0.5);
+  });
+
+  test(`accessibility: no WCAG A/AA violations at ${size(A11Y_VIEWPORT)} (axe-core)`, async ({ openPage }) => {
+    const page = await openPage(NOT_FOUND_PATH, A11Y_VIEWPORT);
+    await page.addScriptTag({ path: AXE_PATH });
+    const violations = await page.evaluate(runAxe, [...WCAG_TAGS]);
+    expect(violations.map(formatViolation), 'axe-core found WCAG A/AA violations on the 404 page').toEqual([]);
+  });
+
+  for (const viewport of LAYOUT_VIEWPORTS) {
+    test(`layout: no horizontal overflow at ${size(viewport)}`, async ({ openPage }) => {
+      const page = await openPage(NOT_FOUND_PATH, viewport);
+      const { overflow } = await page.evaluate(measureOverflow);
+      expect(overflow, `the 404 page is ${overflow}px wider than the ${viewport.width}px viewport`).toBeLessThanOrEqual(0);
+    });
+  }
+
+  test(`runtime: no page errors and no first-party HTTP errors besides the page's own 404`, async ({ openPage, baseURL }) => {
+    const siteOrigin = new URL(String(baseURL)).origin;
+    /** @type {string[]} */
+    const pageErrors = [];
+    /** @type {string[]} */
+    const httpErrors = [];
+    await openPage(NOT_FOUND_PATH, RUNTIME_VIEWPORT, {
+      beforeGoto(page) {
+        page.on('pageerror', (error) => pageErrors.push(`${error.name}: ${error.message}`));
+        page.on('response', (response) => {
+          const url = new URL(response.url());
+          if (response.status() >= 400 && url.origin === siteOrigin && url.pathname !== NOT_FOUND_PATH) {
+            httpErrors.push(`${response.status()} ${response.url()}`);
+          }
+        });
+      },
+    });
+    expect({ pageErrors, httpErrors }, 'Uncaught errors or first-party HTTP errors on the 404 page').toEqual({
+      pageErrors: [],
+      httpErrors: [],
+    });
+  });
 });
 
 /**
