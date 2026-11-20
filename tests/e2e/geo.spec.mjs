@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+const enestAlbum = 'https://enest.bandcamp.com/album/my-silent-past';
+
 const releases = [
   {
     id: 'the-eighteen-forties',
@@ -49,6 +51,7 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
       expect(webPage.mainEntity.map((item) => item['@id']).sort()).toEqual(services.map((item) => item['@id']).sort());
       const sources = route === 'music-production' ? [
         ...releases.map((release) => release.source),
+        enestAlbum,
         'https://www.ynet.co.il/articles/0,7340,L-4726453,00.html',
         'https://noam-rotem.bandcamp.com/album/--2',
         'https://www.nli.org.il/he/items/NNL_MUSIC_AL990047639490205171/NLI',
@@ -63,6 +66,14 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
       }
       const hebrew = page.locator('main section[lang="he"][dir="rtl"]');
       await expect(hebrew.getByRole('heading')).toBeVisible();
+      if (route === 'music-production') {
+        const enest = page.locator('article#my-silent-past');
+        await expect(enest.getByRole('heading', { name: 'ENEST — My Silent Past' })).toBeVisible();
+        await expect(enest).toContainText('Avichai Tuchman co-produced the album with ENEST and mixed it.');
+        await expect(enest.getByRole('link', { name: 'Listen and read the album credits on Bandcamp' }))
+          .toHaveAttribute('href', enestAlbum);
+        await expect(hebrew.getByRole('link', { name: 'My Silent Past' })).toHaveAttribute('href', '#my-silent-past');
+      }
       for (const target of await hebrew.locator('a[href^="#"]').evaluateAll((links) => links.map((link) => link.hash))) {
         await expect(page.locator(target)).toHaveCount(1);
       }
