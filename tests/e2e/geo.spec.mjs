@@ -67,7 +67,16 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
       const hebrew = page.locator('main section[lang="he"][dir="rtl"]');
       await expect(hebrew.getByRole('heading')).toBeVisible();
       if (route === 'music-production') {
-        const enest = page.locator('article#my-silent-past');
+        const hero = page.locator('section.hero');
+        await expect(hero.getByRole('heading', { level: 1 })).toHaveText('Indie music production and mixing in Tel Aviv');
+        await expect(hero).toContainText('live instruments and electronics');
+        await expect(hero.getByRole('link', { name: 'Start with a demo' })).toHaveAttribute('href', '#project-brief');
+        await expect(hero.getByRole('link', { name: 'Hear selected recordings' })).toHaveAttribute('href', '#selected-work');
+        await expect(page.locator('#project-brief').getByRole('link', { name: 'Send a demo by email' }))
+          .toHaveAttribute('href', /^mailto:/);
+        await expect(page.locator('#project-brief').getByRole('link', { name: 'Discuss your project on WhatsApp' }))
+          .toHaveAttribute('href', /^https:\/\/wa\.me\//);
+        const enest = page.locator('#selected-work article#my-silent-past');
         await expect(enest.getByRole('heading', { name: 'ENEST — My Silent Past' })).toBeVisible();
         await expect(enest).toContainText('Avichai Tuchman co-produced the album with ENEST and mixed it.');
         await expect(enest.getByRole('link', { name: 'Listen and read the album credits on Bandcamp' }))
