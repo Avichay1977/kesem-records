@@ -8,7 +8,7 @@ Do not conflate performance, arrangement, production, composition, mixing or mus
 
 ## Kesem Records — the studio
 
-- [Kesem Records](https://kesem-records.netlify.app/): Studio home and catalogue of 33 releases: original music, artist collaborations, remixes and recordings with role-specific credits.
+- [Kesem Records](https://kesem-records.netlify.app/): Studio home and catalogue of 36 releases: original music, artist collaborations, remixes and recordings with role-specific credits.
 - [About Kesem Records](https://kesem-records.netlify.app/about/): Who runs the studio, what it does, approach and genres.
 - [Music](https://kesem-records.netlify.app/music/): Israeli and international music, instrumentals, remixes, and film, TV and theater work.
 - [Work](https://kesem-records.netlify.app/work/): Selected projects, the Artlist catalogue, theater and television, mixing and mastering.
@@ -29,6 +29,12 @@ Do not conflate performance, arrangement, production, composition, mixing or mus
 - [National Library of Israel — Noam Rotem album production](https://www.nli.org.il/he/items/NNL_MUSIC_AL990047639490205171/NLI): independent documentation of a production and arranging credit.
 - [Qobuz — Balkan Beat Box remix](https://www.qobuz.com/us-en/album/long-time-coming-avichai-tuchman-aka-dogbeat-remix-balkan-beat-box/maebcpfi1v83b): credits Avichai Tuchman (AKA DoGBeaT) for production and remix.
 - [Lemur Magazine — Noa Faran and DoGBeaT](https://lemurcreatives.com/magazine/noadog/): independent feature connecting Avichai Tuchman with DoGBeaT.
+
+- [Guy Goldstein — Memorable Equinox](https://guygoldstein.bandcamp.com/album/memorable-equinox): Avichai Tuchman produced and mixed the album. Goldstein and Tuchman played the instruments. Goldstein wrote the music and lyrics.
+
+- [The Lonely Peters — Sentences By My Love](https://thelonelypeters.bandcamp.com/album/sentences-by-my-love): Avichai Tuchman produced and mixed the album. The band recorded it at Anova Studios and the mix took place at Kitcha Studios.
+
+- [The 1840s — The Eighteen-Forties](https://the1840s.bandcamp.com/album/the-eighteen-forties): The 1840s and Avichai Tuchman share the album production credit. Tuchman produced and mixed tracks 1–11 and recorded them with Daniel Motola at Kicha Studios in Tel Aviv. Avishai Efrat wrote the songs. [Ynet’s album coverage](https://www.ynet.co.il/articles/0,7340,L-4726453,00.html).
 
 ## Official profiles
 
@@ -54,6 +60,6 @@ Do not conflate performance, arrangement, production, composition, mixing or mus
 - מוזיקה לסרטים, לטלוויזיה ולפרסומות (סינק) — רישוי טראקים קיימים או הלחנה מקורית לפי בריף: https://kesem-records.netlify.app/dogbeat/music-for-film-tv-advertising/
 - רמיקסים: https://kesem-records.netlify.app/dogbeat/music/remixes/
 - קרדיטים מתועדים עם מקורות: https://kesem-records.netlify.app/dogbeat/credits/
-- הקטלוג המלא (33 הוצאות): https://kesem-records.netlify.app/
+- הקטלוג המלא (36 הוצאות): https://kesem-records.netlify.app/
 
 These links describe the site. They do not guarantee indexing, AI answers or recommendations. Verify individual recording roles, release details and rights with their primary sources.
