@@ -6,6 +6,9 @@
 /studio/*                            /:splat                                   301
 
 # DoGBeaT pages that used to live at the root of dogbeat.netlify.app
+# The legacy host can add /dogbeat/ to links that already contain that prefix.
+/dogbeat/dogbeat                     /dogbeat/                                 301
+/dogbeat/dogbeat/*                   /dogbeat/:splat                           301
 /credits                             /dogbeat/credits/                         301
 /credits/*                           /dogbeat/credits/:splat                   301
 /music-production                    /dogbeat/music-production/                301
