@@ -2,9 +2,15 @@ import { test, expect } from '@playwright/test';
 
 const enestAlbum = 'https://enest.bandcamp.com/album/my-silent-past';
 const selectedIndieExamples = [
-  ['maale-ashan', 'https://roeifreilich.bandcamp.com/album/--2', 'produced and mixed the album'],
+  ['maale-ashan', 'https://roeifreilich.bandcamp.com/album/--2', 'produced and mixed the single'],
   ['nishmor-al-hahaverim', 'https://reinesgirls.bandcamp.com/album/-', 'mixed it with Eliyada Ramon'],
   ['harigush-shebanefila', 'https://roeifreilich.bandcamp.com/album/--3', 'contributed bass and backing vocals'],
+];
+const leadRecordings = [
+  ['nishmor-al-hahaverim', 'https://www.youtube.com/watch?v=b9xKq-5tE1Q'],
+  ['maale-ashan', 'https://www.youtube.com/watch?v=wS_ahiD_qKc'],
+  ['jane-and-the-boy-remix', 'https://www.youtube.com/watch?v=8D5vmPjjY14'],
+  ['jane-and-the-boy-remix', 'https://artlist.io/royalty-free-music/song/i-dont-want-it-dogbeat-remix/97187'],
 ];
 const faranAndRemixSources = [
   'https://music.apple.com/us/album/%D7%9E%D7%A7%D7%A8%D7%94-%D7%90%D7%91%D7%95%D7%93-ep/1884640507',
@@ -65,6 +71,7 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
       const sources = route === 'music-production' ? [
         ...releases.map((release) => release.source),
         ...selectedIndieExamples.map(([, url]) => url),
+        ...leadRecordings.map(([, url]) => url),
         ...faranAndRemixSources,
         enestAlbum,
         'https://www.ynet.co.il/articles/0,7340,L-4726453,00.html',
@@ -100,7 +107,13 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
         for (const [id, url, credit] of selectedIndieExamples) {
           const example = page.locator(`#selected-work article#${id}`);
           await expect(example).toContainText(credit);
-          await expect(example.getByRole('link')).toHaveAttribute('href', url);
+          await expect(example.locator(`a[href="${url}"]`)).toBeVisible();
+        }
+        await expect(page.locator('#selected-work article').nth(0)).toHaveAttribute('id', 'nishmor-al-hahaverim');
+        await expect(page.locator('#selected-work article').nth(1)).toHaveAttribute('id', 'maale-ashan');
+        await expect(page.locator('#remixes article').first()).toHaveAttribute('id', 'jane-and-the-boy-remix');
+        for (const [id, url] of leadRecordings) {
+          await expect(page.locator(`article#${id} a[href="${url}"]`)).toBeVisible();
         }
         await expect(page.locator('#featured-ep #mikre-avud-title-track')).toContainText('played on, produced and mixed');
         await expect(page.locator('#featured-ep #sheker-katan')).toContainText('arranged, produced and mixed it');
