@@ -1,6 +1,19 @@
 import { test, expect } from '@playwright/test';
 
 const enestAlbum = 'https://enest.bandcamp.com/album/my-silent-past';
+const selectedIndieExamples = [
+  ['maale-ashan', 'https://roeifreilich.bandcamp.com/album/--2', 'produced and mixed the album'],
+  ['nishmor-al-hahaverim', 'https://reinesgirls.bandcamp.com/album/-', 'mixed it with Eliyada Ramon'],
+  ['harigush-shebanefila', 'https://roeifreilich.bandcamp.com/album/--3', 'contributed bass and backing vocals'],
+];
+const faranAndRemixSources = [
+  'https://music.apple.com/us/album/%D7%9E%D7%A7%D7%A8%D7%94-%D7%90%D7%91%D7%95%D7%93-ep/1884640507',
+  'https://www.youtube.com/watch?v=rqFYO72tGAM',
+  'https://www.nli.org.il/he/items/NNL_MUSIC_AL997013340264405171/NLI',
+  'https://www.youtube.com/watch?v=fW5FZm3X4MM',
+  'https://www.qobuz.com/ie-en/album/long-time-coming-avichai-tuchman-aka-dogbeat-remix-balkan-beat-box/maebcpfi1v83b',
+  'https://artlist.io/royalty-free-music/song/i-dont-want-it-dogbeat-remix-instrumental-version/97188',
+];
 
 const releases = [
   {
@@ -51,6 +64,8 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
       expect(webPage.mainEntity.map((item) => item['@id']).sort()).toEqual(services.map((item) => item['@id']).sort());
       const sources = route === 'music-production' ? [
         ...releases.map((release) => release.source),
+        ...selectedIndieExamples.map(([, url]) => url),
+        ...faranAndRemixSources,
         enestAlbum,
         'https://www.ynet.co.il/articles/0,7340,L-4726453,00.html',
         'https://noam-rotem.bandcamp.com/album/--2',
@@ -82,6 +97,14 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
         await expect(enest.getByRole('link', { name: 'Listen and read the album credits on Bandcamp' }))
           .toHaveAttribute('href', enestAlbum);
         await expect(hebrew.getByRole('link', { name: 'My Silent Past' })).toHaveAttribute('href', '#my-silent-past');
+        for (const [id, url, credit] of selectedIndieExamples) {
+          const example = page.locator(`#selected-work article#${id}`);
+          await expect(example).toContainText(credit);
+          await expect(example.getByRole('link')).toHaveAttribute('href', url);
+        }
+        await expect(page.locator('#featured-ep #mikre-avud-title-track')).toContainText('played on, produced and mixed');
+        await expect(page.locator('#featured-ep #sheker-katan')).toContainText('arranged, produced and mixed it');
+        await expect(page.locator('#remixes article')).toHaveCount(2);
       }
       for (const target of await hebrew.locator('a[href^="#"]').evaluateAll((links) => links.map((link) => link.hash))) {
         await expect(page.locator(target)).toHaveCount(1);
