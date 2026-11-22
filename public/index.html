@@ -70,6 +70,59 @@
 .preview-nav .preview-links{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px 16px;max-width:100%;min-width:0}
 .preview-nav .preview-links a{max-width:100%}
 }
+</style>
+<style id="ka-site-polaroid-style">
+/* Paper frames for the nine original user-supplied photos. Originals stay unchanged. */
+.kr-catalog .ka-hero-media{position:relative;min-width:0;align-self:stretch;display:block;min-height:400px;overflow:visible}
+.kr-catalog .ka-main-polaroid{margin:14px 23px 18px 3px;padding:12px 12px 0;background:#faf8f0;color:#302c24;box-shadow:0 16px 30px #0008,0 2px 7px #0005;transform:rotate(-2deg);transform-origin:center center;border:1px solid #fff;max-width:calc(100% - 26px)}
+.kr-catalog .ka-main-polaroid .ka-main-photo{display:block;width:100%;height:350px;min-height:0;max-height:none;object-fit:cover;object-position:50% 50%;filter:saturate(.94);border:0}
+.kr-catalog .ka-main-polaroid figcaption,.kr-catalog .ka-mini-polaroid figcaption,.kr-catalog .ka-service-photo figcaption,.kr-catalog .ka-story figcaption{font-family:'Special Elite','Courier New',monospace;letter-spacing:.015em;text-align:center}
+.kr-catalog .ka-main-polaroid figcaption{font-size:13px;line-height:1.4;padding:16px 4px 17px}
+.kr-catalog .ka-mini-polaroid{position:absolute;right:0;bottom:1px;width:34%;max-width:175px;margin:0;padding:7px 7px 0;border:1px solid #fff;background:#fffdf6;color:#2f2a23;box-shadow:0 10px 18px #0009;transform:rotate(7deg);transform-origin:center center;z-index:2}
+.kr-catalog .ka-mini-polaroid img{display:block;width:100%;height:146px;min-height:0;object-fit:cover;object-position:center 25%}
+.kr-catalog .ka-mini-polaroid figcaption{font-size:11px;line-height:1.3;padding:10px 0 12px}
+.kr-catalog .ka-service-photo{background:#fffdf8;border:1px solid #e5dfd5;box-shadow:0 9px 17px #1b1d1b25,0 2px 4px #1b1d1b22;padding:9px 9px 0;transform:rotate(-1.9deg);margin:19px 23px 2px;min-width:0}
+.kr-catalog .ka-service:nth-child(2) .ka-service-photo{transform:rotate(1.6deg)}
+.kr-catalog .ka-service:nth-child(3) .ka-service-photo{transform:rotate(-1deg)}
+.kr-catalog .ka-service .ka-service-photo img{display:block;width:100%;height:177px;min-height:0;object-fit:cover}
+.kr-catalog .ka-service-photo figcaption{font-size:11px;line-height:1.3;min-height:43px;padding:13px 2px 9px;color:#3b3933}
+.kr-catalog .ka-service-copy{position:relative;z-index:1}
+.kr-catalog .ka-story-grid{column-gap:23px;row-gap:25px;padding:14px 12px 25px}
+.kr-catalog .ka-story-grid figure{display:block;margin:0;background:#fffdf8;padding:10px 10px 4px;border:1px solid #e2dcd0;box-shadow:0 8px 19px #1e1b1733,0 2px 4px #1e1b171f;transform:rotate(-2.5deg);transform-origin:center center;min-width:0}
+.kr-catalog .ka-story-grid figure:nth-child(2){transform:rotate(3deg)}
+.kr-catalog .ka-story-grid figure:nth-child(3){transform:rotate(-1.3deg)}
+.kr-catalog .ka-story-grid figure:nth-child(4){transform:rotate(2.4deg)}
+.kr-catalog .ka-story-grid figure img{height:198px;max-width:100%;min-height:0;width:100%;object-fit:cover}
+.kr-catalog .ka-story-grid figcaption{display:flex;align-items:center;justify-content:center;min-height:50px;padding:10px 4px 11px;font-size:12px;line-height:1.25;color:#383229;font-weight:400}
+@media(max-width:860px){
+.kr-catalog .ka-main-polaroid .ka-main-photo{height:300px}
+.kr-catalog .ka-service-photo{margin:17px 15px 3px}
+.kr-catalog .ka-service .ka-service-photo img{height:160px}
+.kr-catalog .ka-story-grid{column-gap:16px;padding-inline:9px}
+.kr-catalog .ka-story-grid figure img{height:170px}
+}
+@media(max-width:660px){
+.kr-catalog .ka-hero-media{min-height:280px}
+.kr-catalog .ka-main-polaroid{margin:9px 17px 13px 5px;padding:8px 8px 0;max-width:calc(100% - 22px);transform:rotate(-1.5deg)}
+.kr-catalog .ka-main-polaroid .ka-main-photo{height:235px;min-height:0}
+.kr-catalog .ka-main-polaroid figcaption{font-size:10px;padding:10px 2px 12px}
+.kr-catalog .ka-mini-polaroid{right:2px;bottom:0;width:34%;max-width:130px;transform:rotate(6deg);padding:5px 5px 0}
+.kr-catalog .ka-mini-polaroid img{height:95px}
+.kr-catalog .ka-mini-polaroid figcaption{font-size:9px;padding:6px 0 9px}
+.kr-catalog .ka-service{grid-template-columns:43% minmax(0,1fr)!important;align-items:stretch}
+.kr-catalog .ka-service-photo{margin:12px 0 12px 12px;padding:6px 6px 0;align-self:center;transform:rotate(-1.3deg);min-width:0}
+.kr-catalog .ka-service .ka-service-photo img{height:146px;min-height:0;max-height:none}
+.kr-catalog .ka-service-photo figcaption{font-size:9px;min-height:36px;padding:9px 1px 7px}
+.kr-catalog .ka-service-copy{min-width:0}
+.kr-catalog .ka-story-grid{gap:20px;padding:12px 5px 19px}
+.kr-catalog .ka-story-grid figure{padding:7px 7px 0;transform:rotate(-1.5deg)}
+.kr-catalog .ka-story-grid figure:nth-child(2){transform:rotate(1.5deg)}
+.kr-catalog .ka-story-grid figure:nth-child(3){transform:rotate(-1deg)}
+.kr-catalog .ka-story-grid figure:nth-child(4){transform:rotate(1.4deg)}
+.kr-catalog .ka-story-grid figure img{height:145px;min-height:0}
+.kr-catalog .ka-story-grid figcaption{font-size:10px;min-height:44px;padding:8px 1px 10px}
+}
+@media(prefers-reduced-motion:reduce){.kr-catalog .ka-polaroid,.kr-catalog .ka-story-grid figure{transition:none}}
 </style></head> <body><a class="skip-link" href="#main-content">Skip to main content</a><div class="brand-unified" role="navigation" aria-label="Kesem Records main sections"><a class="wordmark" href="/">Kesem Records.</a><a href="/dogbeat/">DoGBeaT</a><a href="/dogbeat/music/">Music</a><a href="/dogbeat/credits/">Credits</a><a href="/dogbeat/ai-technology/">AI Technology</a></div> <header class="preview-nav"> <div class="preview-nav-inner"> <a aria-label="Kesem Records home" class="preview-brand" href="#kc-title"><span class="brand-text">KESEM RECORDS</span></a> <nav aria-label="Main" class="preview-links"> <a href="#kc-projects">Projects</a> <a href="#kc-work">Production &amp; Performance</a> <a href="/about/">About</a> <a href="https://kesem-records.netlify.app/dogbeat/" rel="noopener">DoGBeaT</a> </nav> </div> </header> <main id="main-content" tabindex="-1"> <div class="kr-catalog" data-kc-root> <section class="ka-hero" aria-labelledby="kc-title">
 <div class="ka-hero-copy"><p class="ka-eyebrow">KESEM RECORDS / AVICHAI TUCHMAN / DoGBeaT</p>
 <h1 id="kc-title">Make the song hit.<em>Keep its soul.</em></h1>
@@ -79,14 +132,14 @@
 <a class="ka-btn ka-btn-light" href="#ka-services">Work with me</a>
 <a class="ka-btn ka-btn-light" href="/dogbeat/music-production/#project-brief">Send a demo</a>
 </div></div>
-<div class="ka-hero-media"><img class="ka-main-photo" src="/assets/home-artist/01-studio-console.webp" alt="Producer adjusting an analog audio mixing console in a recording studio" width="1536" height="1018" decoding="async" fetchpriority="high">
-<figure class="ka-portrait"><img src="/assets/home-artist/03-bassist-portrait.webp" alt="Bass player wearing headphones with an electric bass" width="1152" height="1536" decoding="async"></figure></div></section>
+<div class="ka-hero-media"><figure class="ka-polaroid ka-main-polaroid"><img class="ka-main-photo" src="/assets/home-artist/01-studio-console.webp" alt="Producer adjusting an analog audio mixing console in a recording studio" width="1536" height="1018" decoding="async" fetchpriority="high"><figcaption>Kesem Studio · At the mixing desk</figcaption></figure>
+<figure class="ka-portrait ka-polaroid ka-mini-polaroid"><img src="/assets/home-artist/03-bassist-portrait.webp" alt="Bass player wearing headphones with an electric bass" width="1152" height="1536" decoding="async"><figcaption>DoGBeaT · Bass</figcaption></figure></div></section>
 <div class="ka-proof"><strong>Selected work with</strong><span>Noam Rotem · Reines Girls · Roei Freilich · Haze'evot · Noa Faran</span></div>
 <section class="ka-services" id="ka-services" aria-labelledby="ka-services-h"><header class="ka-section-head"><p>01 / WORK TOGETHER</p><h2 id="ka-services-h">What are we making?</h2><div class="ka-subhead">One song or a full record. Start with your music, and build the production around it.</div></header>
 <div class="ka-service-grid">
-<article class="ka-service"><img src="/assets/home-artist/02-studio-guitars.webp" loading="lazy" decoding="async" width="1152" height="1536" alt="Electric and acoustic guitars and basses in a recording studio"><div class="ka-service-copy"><small>01 / FULL PROJECT</small><h3>Album &amp; EP production</h3><p>Arrangements, performances, recording and mixing. For artists and bands making a sound that belongs to them.</p><a href="/dogbeat/music-production/">Explore full production →</a></div></article>
-<article class="ka-service"><img src="/assets/home-artist/04-drum-recording.webp" loading="lazy" decoding="async" width="1536" height="1152" alt="Acoustic drum kit close-miked for a studio recording"><div class="ka-service-copy"><small>02 / ONE TRACK</small><h3>Single production</h3><p>Give one song a direction — from a rough demo to the recorded parts and a finished mix.</p><a href="#release-gilad">Hear a single: Loren Milk — Gilad →</a></div></article>
-<article class="ka-service"><img src="/assets/home-artist/05-mikre-avud-artwork.webp" loading="lazy" decoding="async" width="1536" height="1536" alt="Cover art supplied for Noa Faran and DoGBeaT collaboration, Mikre Avud"><div class="ka-service-copy"><small>03 / CREATE TOGETHER</small><h3>Writing &amp; collaboration</h3><p>Co-writing, live playing and electronic production. A creative partner for developing a shared idea.</p><a href="#release-mikre-avud-ep">Hear Noa Faran × DoGBeaT →</a></div></article>
+<article class="ka-service"><figure class="ka-polaroid ka-service-photo"><img src="/assets/home-artist/02-studio-guitars.webp" loading="lazy" decoding="async" width="1152" height="1536" alt="Electric and acoustic guitars and basses in a recording studio"><figcaption>Guitars &amp; basses</figcaption></figure><div class="ka-service-copy"><small>01 / FULL PROJECT</small><h3>Album &amp; EP production</h3><p>Arrangements, performances, recording and mixing. For artists and bands making a sound that belongs to them.</p><a href="/dogbeat/music-production/">Explore full production →</a></div></article>
+<article class="ka-service"><figure class="ka-polaroid ka-service-photo"><img src="/assets/home-artist/04-drum-recording.webp" loading="lazy" decoding="async" width="1536" height="1152" alt="Acoustic drum kit close-miked for a studio recording"><figcaption>Recording the groove</figcaption></figure><div class="ka-service-copy"><small>02 / ONE TRACK</small><h3>Single production</h3><p>Give one song a direction — from a rough demo to the recorded parts and a finished mix.</p><a href="#release-gilad">Hear a single: Loren Milk — Gilad →</a></div></article>
+<article class="ka-service"><figure class="ka-polaroid ka-service-photo"><img src="/assets/home-artist/05-mikre-avud-artwork.webp" loading="lazy" decoding="async" width="1536" height="1536" alt="Cover art supplied for Noa Faran and DoGBeaT collaboration, Mikre Avud"><figcaption>Noa Faran × DoGBeaT</figcaption></figure><div class="ka-service-copy"><small>03 / CREATE TOGETHER</small><h3>Writing &amp; collaboration</h3><p>Co-writing, live playing and electronic production. A creative partner for developing a shared idea.</p><a href="#release-mikre-avud-ep">Hear Noa Faran × DoGBeaT →</a></div></article>
 </div></section>
 <section class="ka-selected" id="ka-selected" aria-labelledby="ka-selected-h"><header class="ka-section-head"><p>02 / THE SOUND</p><h2 id="ka-selected-h">Start by listening.</h2><div class="ka-subhead">Three entry points into the work. Exact roles and credits are documented with the recordings below.</div></header>
 <div class="ka-selected-grid">
