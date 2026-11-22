@@ -20,6 +20,8 @@
 /assets/*                            /dogbeat/assets/:splat                    301
 
 # /music/ is the Kesem music page; the DoGBeaT track pages moved to /dogbeat/music/
+https://kesem-records.netlify.app/music/                   https://kesemrecords.com/music/ 301!
+http://kesem-records.netlify.app/music/                   https://kesemrecords.com/music/ 301!
 /music/*                             /dogbeat/music/:splat                     301
 
 # The old content editor edits files that are no longer shown on the site, so it stays closed
@@ -42,7 +44,6 @@ https://kesem-records.netlify.app/dogbeat-theme.css        https://kesemrecords.
 https://kesem-records.netlify.app/about/                   https://kesemrecords.com/about/ 301!
 https://kesem-records.netlify.app/contact/                 https://kesemrecords.com/contact/ 301!
 https://kesem-records.netlify.app/dogbeat/                 https://kesemrecords.com/dogbeat/ 301!
-https://kesem-records.netlify.app/music/                   https://kesemrecords.com/music/ 301!
 https://kesem-records.netlify.app/work/                    https://kesemrecords.com/work/ 301!
 https://kesem-records.netlify.app/about/*                  https://kesemrecords.com/about/:splat 301!
 https://kesem-records.netlify.app/assets/*                 https://kesemrecords.com/assets/:splat 301!
@@ -65,7 +66,6 @@ http://kesem-records.netlify.app/dogbeat-theme.css        https://kesemrecords.c
 http://kesem-records.netlify.app/about/                   https://kesemrecords.com/about/ 301!
 http://kesem-records.netlify.app/contact/                 https://kesemrecords.com/contact/ 301!
 http://kesem-records.netlify.app/dogbeat/                 https://kesemrecords.com/dogbeat/ 301!
-http://kesem-records.netlify.app/music/                   https://kesemrecords.com/music/ 301!
 http://kesem-records.netlify.app/work/                    https://kesemrecords.com/work/ 301!
 http://kesem-records.netlify.app/about/*                  https://kesemrecords.com/about/:splat 301!
 http://kesem-records.netlify.app/assets/*                 https://kesemrecords.com/assets/:splat 301!
