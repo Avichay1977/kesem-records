@@ -25,3 +25,52 @@
 # The old content editor edits files that are no longer shown on the site, so it stays closed
 /admin                               /                                         302!
 /admin/*                             /                                         302!
+
+# Production hostname move. Keep old ownership-verification files serving directly.
+# Rule scope is explicit: unknown root paths remain 404; deploy previews are unaffected.
+https://kesem-records.netlify.app/                         https://kesemrecords.com/ 301!
+https://kesem-records.netlify.app/index.html               https://kesemrecords.com/ 301!
+https://kesem-records.netlify.app/robots.txt               https://kesemrecords.com/robots.txt 301!
+https://kesem-records.netlify.app/sitemap.xml              https://kesemrecords.com/sitemap.xml 301!
+https://kesem-records.netlify.app/llms.txt                 https://kesemrecords.com/llms.txt 301!
+https://kesem-records.netlify.app/favicon.ico              https://kesemrecords.com/favicon.ico 301!
+https://kesem-records.netlify.app/favicon.svg              https://kesemrecords.com/favicon.svg 301!
+https://kesem-records.netlify.app/catalog-refinement.css   https://kesemrecords.com/catalog-refinement.css 301!
+https://kesem-records.netlify.app/catalog.css              https://kesemrecords.com/catalog.css 301!
+https://kesem-records.netlify.app/catalog.js               https://kesemrecords.com/catalog.js 301!
+https://kesem-records.netlify.app/dogbeat-theme.css        https://kesemrecords.com/dogbeat-theme.css 301!
+https://kesem-records.netlify.app/about/                   https://kesemrecords.com/about/ 301!
+https://kesem-records.netlify.app/contact/                 https://kesemrecords.com/contact/ 301!
+https://kesem-records.netlify.app/dogbeat/                 https://kesemrecords.com/dogbeat/ 301!
+https://kesem-records.netlify.app/music/                   https://kesemrecords.com/music/ 301!
+https://kesem-records.netlify.app/work/                    https://kesemrecords.com/work/ 301!
+https://kesem-records.netlify.app/about/*                  https://kesemrecords.com/about/:splat 301!
+https://kesem-records.netlify.app/assets/*                 https://kesemrecords.com/assets/:splat 301!
+https://kesem-records.netlify.app/contact/*                https://kesemrecords.com/contact/:splat 301!
+https://kesem-records.netlify.app/dogbeat/*                https://kesemrecords.com/dogbeat/:splat 301!
+https://kesem-records.netlify.app/music/*                  https://kesemrecords.com/music/:splat 301!
+https://kesem-records.netlify.app/og/*                     https://kesemrecords.com/og/:splat 301!
+https://kesem-records.netlify.app/work/*                   https://kesemrecords.com/work/:splat 301!
+http://kesem-records.netlify.app/                         https://kesemrecords.com/ 301!
+http://kesem-records.netlify.app/index.html               https://kesemrecords.com/ 301!
+http://kesem-records.netlify.app/robots.txt               https://kesemrecords.com/robots.txt 301!
+http://kesem-records.netlify.app/sitemap.xml              https://kesemrecords.com/sitemap.xml 301!
+http://kesem-records.netlify.app/llms.txt                 https://kesemrecords.com/llms.txt 301!
+http://kesem-records.netlify.app/favicon.ico              https://kesemrecords.com/favicon.ico 301!
+http://kesem-records.netlify.app/favicon.svg              https://kesemrecords.com/favicon.svg 301!
+http://kesem-records.netlify.app/catalog-refinement.css   https://kesemrecords.com/catalog-refinement.css 301!
+http://kesem-records.netlify.app/catalog.css              https://kesemrecords.com/catalog.css 301!
+http://kesem-records.netlify.app/catalog.js               https://kesemrecords.com/catalog.js 301!
+http://kesem-records.netlify.app/dogbeat-theme.css        https://kesemrecords.com/dogbeat-theme.css 301!
+http://kesem-records.netlify.app/about/                   https://kesemrecords.com/about/ 301!
+http://kesem-records.netlify.app/contact/                 https://kesemrecords.com/contact/ 301!
+http://kesem-records.netlify.app/dogbeat/                 https://kesemrecords.com/dogbeat/ 301!
+http://kesem-records.netlify.app/music/                   https://kesemrecords.com/music/ 301!
+http://kesem-records.netlify.app/work/                    https://kesemrecords.com/work/ 301!
+http://kesem-records.netlify.app/about/*                  https://kesemrecords.com/about/:splat 301!
+http://kesem-records.netlify.app/assets/*                 https://kesemrecords.com/assets/:splat 301!
+http://kesem-records.netlify.app/contact/*                https://kesemrecords.com/contact/:splat 301!
+http://kesem-records.netlify.app/dogbeat/*                https://kesemrecords.com/dogbeat/:splat 301!
+http://kesem-records.netlify.app/music/*                  https://kesemrecords.com/music/:splat 301!
+http://kesem-records.netlify.app/og/*                     https://kesemrecords.com/og/:splat 301!
+http://kesem-records.netlify.app/work/*                   https://kesemrecords.com/work/:splat 301!

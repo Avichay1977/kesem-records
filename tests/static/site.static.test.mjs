@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const PUBLIC_DIR = path.join(ROOT, 'public');
-const SITE_ORIGIN = 'https://kesem-records.netlify.app';
+const SITE_ORIGIN = 'https://kesemrecords.com';
 
 /** JSON-LD nodes that every page repeats; they must be identical everywhere. */
 const SHARED_NODES = {
@@ -118,7 +118,7 @@ function sitePathOf(href) {
   }
 }
 
-/** public/<path>index.html for a page URL such as https://kesem-records.netlify.app/about/, or null. */
+/** public/<path>index.html for a page URL such as https://kesemrecords.com/about/, or null. */
 function pageFileFor(pageUrl) {
   if (!pageUrl.startsWith(`${SITE_ORIGIN}/`) || !pageUrl.endsWith('/')) return null;
   return publicFileFor(pageUrl.slice(SITE_ORIGIN.length));

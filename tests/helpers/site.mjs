@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
 /** Canonical production origin used in sitemap.xml, canonicals and structured data. */
-export const SITE_ORIGIN = 'https://kesem-records.netlify.app';
+export const SITE_ORIGIN = 'https://kesemrecords.com';
 
 const SITEMAP_FILE = fileURLToPath(new URL('../../public/sitemap.xml', import.meta.url));
 

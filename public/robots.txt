@@ -43,4 +43,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://kesem-records.netlify.app/sitemap.xml
+Sitemap: https://kesemrecords.com/sitemap.xml
