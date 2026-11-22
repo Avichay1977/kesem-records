@@ -87,7 +87,7 @@ for (const route of ['music-production', 'music-for-film-tv-advertising']) {
         await expect(page.locator(`main a[href="${url}"]`).first()).toBeVisible();
       }
       const hebrew = page.locator('main section[lang="he"][dir="rtl"]');
-      await expect(hebrew.getByRole('heading')).toBeVisible();
+      await expect(hebrew.getByRole('heading', { level: 2 })).toBeVisible();
       if (route === 'music-production') {
         const hero = page.locator('section.hero');
         await expect(hero.getByRole('heading', { level: 1 })).toHaveText('Indie music production and mixing in Tel Aviv');
