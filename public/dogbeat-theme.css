@@ -17,3 +17,7 @@ a:focus-visible{outline:3px solid #0F5FA6!important;outline-offset:4px}
 .brand-unified a{font-family:'Special Elite','Courier New',monospace!important;font-weight:bold;color:#161412;text-decoration:underline;font-size:14px}
 .brand-unified .wordmark{font-family:'Press Start 2P',monospace!important;font-size:12px;text-decoration:none;margin-right:auto}
 @media(max-width:640px){.brand-unified{padding:.85rem;gap:.65rem}.brand-unified a{font-size:12px}.brand-unified .wordmark{width:100%;margin-right:0}.preview-nav .preview-links{flex-wrap:wrap;gap:.65rem}.preview-nav .preview-links a:last-child{display:inline-flex}h1,h2,h3{overflow-wrap:anywhere}}
+/* Accessibility: minimum mobile tap target for unified navigation */
+@media (max-width: 640px) {
+  .brand-unified a { display: inline-flex; align-items: center; min-height: 32px; }
+}
